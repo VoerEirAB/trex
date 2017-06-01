@@ -1,0 +1,1128 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trex_client Module documentation &mdash; TRex Control Plain 1.7.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/no_scrollbars.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TRex Control Plain 1.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="API Reference" href="index.html"/>
+        <link rel="next" title="trex_exceptions Exceptions module" href="exceptions.html"/>
+        <link rel="prev" title="API Reference" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> TRex Control Plain
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">trex_client Module documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ctrexclient-class">CTRexClient class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ctrexresult-class">CTRexResult class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">trex_exceptions Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json_fields.html">TRex JSON Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#main-fields">Main Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#detailed-explanation">Detailed explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-global-field">trex-global field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#tx-gen-field">tx-gen field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-latecny-field">trex-latecny field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-latecny-v2-field">trex-latecny-v2 field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#histogram-object-fields">Histogram object fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#access-examples">Access Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_utils.html">Client Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packet_generator/index.html">TRex Packet Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html">CTRexPktBuilder class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html#packet-builder-exceptions">Packet Builder Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/examples.html">Packet Builder Usage Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/stream_export.html">Stream Export YAML syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#guidelines">Guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#export-format">Export Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-trex_yaml_gen">TRex YAML generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-general_utils">General Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#full-featured-interactive-shell">Full-featured interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#end-to-end-cycle">End-to-End cycle</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">TRex Control Plain</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Reference</a> &raquo;</li>
+      
+    <li>trex_client Module documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/client_code.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="trex-client-module-documentation">
+<h1>trex_client Module documentation<a class="headerlink" href="#trex-client-module-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ctrexclient-class">
+<h2>CTRexClient class<a class="headerlink" href="#ctrexclient-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trex_client.CTRexClient">
+<em class="property">class </em><code class="descclassname">trex_client.</code><code class="descname">CTRexClient</code><span class="sig-paren">(</span><em>trex_host</em>, <em>max_history_size=100</em>, <em>trex_daemon_port=8090</em>, <em>trex_zmq_port=4500</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines the client side of the RESTfull interaction with TRex</p>
+<p>Instantiate a TRex client object, and connecting it to listening daemon-server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>trex_host <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">a string of the TRex ip address or hostname.</p>
+</dd>
+<dt>max_history_size <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">a number to set the maximum history size of a single TRex run. Each sampling adds a new item to history.</p>
+<p class="last">default value : <strong>100</strong></p>
+</dd>
+<dt>trex_daemon_port <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">the port number on which the trex-daemon server can be reached</p>
+<p class="last">default value: <strong>8090</strong></p>
+</dd>
+<dt>trex_zmq_port <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">the port number on which trex&#8217;s zmq module will interact with daemon server</p>
+<p class="last">default value: <strong>4500</strong></p>
+</dd>
+<dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first">sets a verbose output on supported class method.</p>
+<p class="last">default value : <strong>False</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">socket errors, in case server could not be reached.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="trex_client.CTRexClient.cancel_reservation">
+<code class="descname">cancel_reservation</code><span class="sig-paren">(</span><em>user=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.cancel_reservation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.cancel_reservation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancels a current reservation of TRex to a certain user.</p>
+<p>When TRex is reserved, no other user can start new TRex runs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>user <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">a username of the desired owner of TRex</p>
+<p class="last">default: current logged user</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> if reservation canceled successfully,</li>
+<li><strong>False</strong> if there was no reservation at all.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexRequestDenied" title="trex_exceptions.TRexRequestDenied"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRequestDenied</span></code></a>, in case TRex is reserved for another user than the one trying to cancel the reservation.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.check_server_connectivity">
+<code class="descname">check_server_connectivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.check_server_connectivity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.check_server_connectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks for server valid connectivity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.force_kill">
+<code class="descname">force_kill</code><span class="sig-paren">(</span><em>confirm=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.force_kill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.force_kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force killing of running TRex process (if exists) on the server.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This method is a safety method and <strong>overrides any running or reserved resources</strong>, and as such isn&#8217;t designed to be used on a regular basis. 
+Always consider using <a class="reference internal" href="#trex_client.CTRexClient.stop_trex" title="trex_client.CTRexClient.stop_trex"><code class="xref py py-func docutils literal"><span class="pre">trex_client.CTRexClient.stop_trex()</span></code></a> instead.</p>
+</div>
+<p>In the end of this method, TRex will return to IDLE state with no reservation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>confirm <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Prompt a user confirmation before continue terminating TRex session</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> on successful termination</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.get_result_obj">
+<code class="descname">get_result_obj</code><span class="sig-paren">(</span><em>copy_obj=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.get_result_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.get_result_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the result object of the trex_client&#8217;s instance.</p>
+<p>By default, returns a <strong>copy</strong> of the objects (so that changes to the original object are masked).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>copy_obj <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first">False means that a reference to the original (possibly changing) object are passed</p>
+<p class="last">defaul value : <strong>True</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the latest result object (see <code class="xref py py-class docutils literal"><span class="pre">CTRexResult</span></code> for further details) with sampled data.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.get_running_info">
+<code class="descname">get_running_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.get_running_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.get_running_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs single poll of TRex running data and process it into the result object (named <cite>result_obj</cite>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This method will throw an exception if TRex isn&#8217;t running. Always consider using <a class="reference internal" href="#trex_client.CTRexClient.is_running" title="trex_client.CTRexClient.is_running"><code class="xref py py-func docutils literal"><span class="pre">trex_client.CTRexClient.is_running()</span></code></a> which handles a single poll operation in safer manner.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dictionary containing the most updated data dump from TRex.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code>, in case JSON stream decoding error.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.get_running_status">
+<code class="descname">get_running_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.get_running_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.get_running_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the current TRex status.</p>
+<p>If available, a verbose data will accompany the state itself.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary with &#8216;state&#8217; and &#8216;verbose&#8217; keys.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">ProtocolError, in case of error in JSON-RPC protocol.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.get_trex_files_path">
+<code class="descname">get_trex_files_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.get_trex_files_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.get_trex_files_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the local path in which files are stored when pushed to TRex server from client.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string representation of the desired path<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The returned path represents a path on the TRex server <strong>local machine</strong></p>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">ProtocolError, in case of error in JSON-RPC protocol.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.is_query_relevance">
+<code class="descname">is_query_relevance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.is_query_relevance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.is_query_relevance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if time between any two consecutive server queries (asking for live running data) passed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The allowed minimum time between each two consecutive samples is 0.5 seconds.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>True</strong> if more than 0.5 seconds has been past from last server query.</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.is_reserved">
+<code class="descname">is_reserved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.is_reserved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.is_reserved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if TRex is currently reserved to any user or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>True</strong> if TRex is reserved.</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">ProtocolError, in case of error in JSON-RPC protocol.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.is_running">
+<code class="descname">is_running</code><span class="sig-paren">(</span><em>dump_out=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.is_running"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.is_running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poll for TRex running status.</p>
+<p>If TRex is running, a history item will be added into result_obj and processed.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This method is especially useful for iterating until TRex run is finished.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>dump_out <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">if passed, the pointer object is cleared and the latest dump stored in it.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> if TRex is running.</li>
+<li><strong>False</strong> if TRex is not running.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code>, in case JSON stream decoding error.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.prompt_verbose_data">
+<code class="descname">prompt_verbose_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.prompt_verbose_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.prompt_verbose_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method prompts any verbose data available, only if <cite>verbose</cite> option has been turned on.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.push_files">
+<code class="descname">push_files</code><span class="sig-paren">(</span><em>filepaths</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.push_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.push_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a file (or a list of files) to store locally on server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>filepaths <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd><p class="first last">a path to a file to be pushed to server.
+if a list of paths is passed, all of those will be pushed to server</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> if file(s) copied successfully.</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">IOError</span></code>, in case specified file wasn&#8217;t found or could not be accessed.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.reserve_trex">
+<code class="descname">reserve_trex</code><span class="sig-paren">(</span><em>user=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.reserve_trex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.reserve_trex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reserves the usage of TRex to a certain user.</p>
+<p>When TRex is reserved, it can&#8217;t be reserved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>user <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">a username of the desired owner of TRex</p>
+<p class="last">default: current logged user</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>True</strong> if reservation made successfully</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexRequestDenied" title="trex_exceptions.TRexRequestDenied"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRequestDenied</span></code></a>, in case TRex is reserved for another user than the one trying to make the reservation.</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexInUseError" title="trex_exceptions.TRexInUseError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexInUseError</span></code></a>, in case TRex is currently running.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.sample_to_run_finish">
+<code class="descname">sample_to_run_finish</code><span class="sig-paren">(</span><em>time_between_samples=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.sample_to_run_finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.sample_to_run_finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically sets automatically sampling of TRex data with sampling rate described by time_between_samples until TRex run finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>time_between_samples <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">determines the time between each sample of the server</p>
+<p class="last">default value : <strong>5</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the latest result object (see <code class="xref py py-class docutils literal"><span class="pre">CTRexResult</span></code> for further details) with sampled data.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">UserWarning</span></code>, in case the condition_func method condition hasn&#8217;t been met</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code>, in case JSON stream decoding error.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.sample_until_condition">
+<code class="descname">sample_until_condition</code><span class="sig-paren">(</span><em>condition_func</em>, <em>time_between_samples=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.sample_until_condition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.sample_until_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically sets ongoing sampling of TRex data, with sampling rate described by time_between_samples.</p>
+<p>On each fetched dump, the condition_func is applied on the result objects, and if returns True, the sampling will stop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>condition_func <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first">function that operates on result_obj and checks if a condition has been met</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>condition_finc</cite> is applied on <cite>CTRexResult</cite> object. Make sure to design a relevant method.</p>
+</div>
+</dd>
+<dt>time_between_samples <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">determines the time between each sample of the server</p>
+<p class="last">default value : <strong>5</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the first result object (see <code class="xref py py-class docutils literal"><span class="pre">CTRexResult</span></code> for further details) of the TRex run on which the condition has been met.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">UserWarning</span></code>, in case the condition_func method condition hasn&#8217;t been met</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code>, in case JSON stream decoding error.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">Exception</span></code>, in case the condition_func suffered from any kind of exception</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.start_trex">
+<code class="descname">start_trex</code><span class="sig-paren">(</span><em>f</em>, <em>d</em>, <em>block_to_success=True</em>, <em>timeout=30</em>, <em>user=None</em>, <em>**trex_cmd_options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.start_trex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.start_trex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request to start a TRex run on server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>f <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">a path (on server) for the injected traffic data (.yaml file)</p>
+</dd>
+<dt>d <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the desired duration of the test. must be at least 30 seconds long.</p>
+</dd>
+<dt>block_to_success <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first">determine if this method blocks until TRex changes state from &#8216;Starting&#8217; to either &#8216;Idle&#8217; or &#8216;Running&#8217;</p>
+<p class="last">default value : <strong>True</strong></p>
+</dd>
+<dt>timeout <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">maximum time (in seconds) to wait in blocking state until TRex changes state from &#8216;Starting&#8217; to either &#8216;Idle&#8217; or &#8216;Running&#8217;</p>
+<p class="last">default value: <strong>30</strong></p>
+</dd>
+<dt>user <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">the identity of the the run issuer.</p>
+</dd>
+<dt>trex_cmd_options <span class="classifier-delimiter">:</span> <span class="classifier">key, val</span></dt>
+<dd><p class="first last">sets desired TRex options using key=val syntax, separated by comma.
+for keys with no value, state key=True</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>True</strong> on success</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code>, in case &#8216;d&#8217; parameter inserted with wrong value.</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexError" title="trex_exceptions.TRexError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexError</span></code></a>, in case one of the trex_cmd_options raised an exception at server.</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexInUseError" title="trex_exceptions.TRexInUseError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexInUseError</span></code></a>, in case TRex is already taken.</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexRequestDenied" title="trex_exceptions.TRexRequestDenied"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRequestDenied</span></code></a>, in case TRex is reserved for another user than the one trying start TRex.</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.stop_trex">
+<code class="descname">stop_trex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.stop_trex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.stop_trex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request to stop a TRex run on server.</p>
+<p>The request is only valid if the stop initiator is the same client as the TRex run initiator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> on successful termination</li>
+<li><strong>False</strong> if request issued but TRex wasn&#8217;t running.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexRequestDenied" title="trex_exceptions.TRexRequestDenied"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRequestDenied</span></code></a>, in case TRex ir running but started by another user.</li>
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexClient.wait_until_kickoff_finish">
+<code class="descname">wait_until_kickoff_finish</code><span class="sig-paren">(</span><em>timeout=40</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexClient.wait_until_kickoff_finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexClient.wait_until_kickoff_finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block the client application until TRex changes state from &#8216;Starting&#8217; to either &#8216;Idle&#8217; or &#8216;Running&#8217;</p>
+<p>The request is only valid if the stop initiator is the same client as the TRex run initiator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>timeout <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">maximum time (in seconds) to wait in blocking state until TRex changes state from &#8216;Starting&#8217; to either &#8216;Idle&#8217; or &#8216;Running&#8217;</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li><strong>True</strong> on successful termination</li>
+<li><strong>False</strong> if request issued but TRex wasn&#8217;t running.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference internal" href="exceptions.html#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a>, in case one of failed TRex run (unexpected termination).</li>
+<li>ProtocolError, in case of error in JSON-RPC protocol.</li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Exceptions are throws only when start_trex did not block in the first place, i.e. <cite>block_to_success</cite> parameter was set to <cite>False</cite></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ctrexresult-class">
+<h2>CTRexResult class<a class="headerlink" href="#ctrexresult-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trex_client.CTRexResult">
+<em class="property">class </em><code class="descclassname">trex_client.</code><code class="descname">CTRexResult</code><span class="sig-paren">(</span><em>max_history_size</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class containing all results received from TRex.</p>
+<p>Ontop to containing the results, this class offers easier data access and extended results processing options</p>
+<p>Instatiate a TRex result object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt>max_history_size <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">a number to set the maximum history size of a single TRex run. Each sampling adds a new item to history.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="trex_client.CTRexResult.clear_results">
+<code class="descname">clear_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.clear_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.clear_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears all results and sets the history&#8217;s validity to <cite>False</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_avg_latency">
+<code class="descname">get_avg_latency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_avg_latency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_avg_latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the average latency measured on each of the interfaces from the start of TRex run</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the average latency, where the key is the measurement interface (<cite>c</cite> indicates client), and the value is the measurement value.<p>The <cite>all</cite> key represents the average of all interfaces&#8217; average</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_avg_window_latency">
+<code class="descname">get_avg_window_latency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_avg_window_latency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_avg_window_latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the average latency measured on each of the interfaces from all the sampled currently stored in window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the average latency, where the key is the measurement interface (<cite>c</cite> indicates client), and the value is the measurement value.<p>The <cite>all</cite> key represents the average of all interfaces&#8217; average</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_current_tx_rate">
+<code class="descname">get_current_tx_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_current_tx_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_current_tx_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the current TX rate in various units representation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the current TX rate, where the key is the measurement units, and the value is the measurement value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_drop_rate">
+<code class="descname">get_drop_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_drop_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_drop_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the most recent drop rate in pkts/sec units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">current drop rate (as float)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_expected_tx_rate">
+<code class="descname">get_expected_tx_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_expected_tx_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_expected_tx_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the expected TX rate in various units representation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the expected TX rate, where the key is the measurement units, and the value is the measurement value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_last_value">
+<code class="descname">get_last_value</code><span class="sig-paren">(</span><em>tree_path_to_key</em>, <em>regex=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_last_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_last_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dynamic getter from the latest sampled data item stored in the result object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>tree_path_to_key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">defines a path to desired data.</p>
+<div class="last admonition tip">
+<p class="first admonition-title">Tip</p>
+<div class="last line-block">
+<div class="line">Use &#8216;.&#8217; to enter one level deeper in dictionary hierarchy. </div>
+<div class="line">Use &#8216;[i]&#8217; to access the i&#8217;th indexed object of an array.</div>
+</div>
+</div>
+</dd>
+<dt>tree_path_to_key <span class="classifier-delimiter">:</span> <span class="classifier">regex</span></dt>
+<dd><p class="first">apply a regex to filter results out from a multiple results set.</p>
+<p>Filter applies only on keys of dictionary type.</p>
+<p class="last">dafault value : <strong>None</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>a list of values relevant to the specified path</li>
+<li>None if no results were fetched or the history isn&#8217;t valid.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_latest_dump">
+<code class="descname">get_latest_dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_latest_dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_latest_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>A  getter to the latest sampled data item stored in the result object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>a dictionary of the latest data item</li>
+<li>an empty dictionary if history is empty.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_max_latency">
+<code class="descname">get_max_latency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_max_latency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_max_latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the maximum latency measured on each of the interfaces</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the maximum latency, where the key is the measurement interface (<cite>c</cite> indicates client), and the value is the measurement value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_total_drops">
+<code class="descname">get_total_drops</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_total_drops"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_total_drops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches the total number of drops identified from the moment TRex run began.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">total drops count (as int)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.get_value_list">
+<code class="descname">get_value_list</code><span class="sig-paren">(</span><em>tree_path_to_key</em>, <em>regex=None</em>, <em>filter_none=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.get_value_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.get_value_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dynamic getter from all sampled data items stored in the result object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>tree_path_to_key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">defines a path to desired data.</p>
+<div class="last admonition tip">
+<p class="first admonition-title">Tip</p>
+<div class="last line-block">
+<div class="line">Use &#8216;.&#8217; to enter one level deeper in dictionary hierarchy. </div>
+<div class="line">Use &#8216;[i]&#8217; to access the i&#8217;th indexed object of an array.</div>
+</div>
+</div>
+</dd>
+<dt>tree_path_to_key <span class="classifier-delimiter">:</span> <span class="classifier">regex</span></dt>
+<dd><p class="first">apply a regex to filter results out from a multiple results set.</p>
+<p>Filter applies only on keys of dictionary type.</p>
+<p class="last">dafault value : <strong>None</strong></p>
+</dd>
+<dt>filter_none <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first">specify if None results should be filtered out or not.</p>
+<p class="last">dafault value : <strong>True</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>a list of values relevant to the specified path. Each item on the list refers to a single server sample.</li>
+<li>None if no results were fetched or the history isn&#8217;t valid.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.is_done_warmup">
+<code class="descname">is_done_warmup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.is_done_warmup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.is_done_warmup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if TRex latest results TX-rate indicates that TRex has reached its expected TX-rate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>True</strong> if expected TX-rate has been reached.</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.is_valid_hist">
+<code class="descname">is_valid_hist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.is_valid_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.is_valid_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if result obejct contains valid data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>True</strong> if history is valid.</li>
+<li><strong>False</strong> otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.set_valid_hist">
+<code class="descname">set_valid_hist</code><span class="sig-paren">(</span><em>valid_stat=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.set_valid_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.set_valid_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets result obejct validity status.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>valid_stat <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first">defines the validity status</p>
+<p class="last">dafault value : <strong>True</strong></p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trex_client.CTRexResult.update_result_data">
+<code class="descname">update_result_data</code><span class="sig-paren">(</span><em>latest_dump</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_client.html#CTRexResult.update_result_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_client.CTRexResult.update_result_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrates a <cite>latest_dump</cite> dictionary into the CTRexResult object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>latest_dump <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">a dictionary with the items desired to be integrated into the object history and stats</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exceptions.html" class="btn btn-neutral float-right" title="trex_exceptions Exceptions module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="API Reference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Cisco Systems Inc..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TRex JSON Template &mdash; TRex Control Plain 1.7.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/no_scrollbars.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TRex Control Plain 1.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="API Reference" href="index.html"/>
+        <link rel="next" title="Client Utilities" href="../client_utils.html"/>
+        <link rel="prev" title="trex_exceptions Exceptions module" href="exceptions.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> TRex Control Plain
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client_code.html">trex_client Module documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client_code.html#ctrexclient-class">CTRexClient class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client_code.html#ctrexresult-class">CTRexResult class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">trex_exceptions Exceptions module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">TRex JSON Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-fields">Main Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detailed-explanation">Detailed explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#trex-global-field">trex-global field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tx-gen-field">tx-gen field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trex-latecny-field">trex-latecny field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trex-latecny-v2-field">trex-latecny-v2 field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#histogram-object-fields">Histogram object fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#access-examples">Access Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_utils.html">Client Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packet_generator/index.html">TRex Packet Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html">CTRexPktBuilder class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html#packet-builder-exceptions">Packet Builder Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/examples.html">Packet Builder Usage Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/stream_export.html">Stream Export YAML syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#guidelines">Guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#export-format">Export Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-trex_yaml_gen">TRex YAML generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-general_utils">General Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#full-featured-interactive-shell">Full-featured interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#end-to-end-cycle">End-to-End cycle</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">TRex Control Plain</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Reference</a> &raquo;</li>
+      
+    <li>TRex JSON Template</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/json_fields.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="trex-json-template">
+<h1>TRex JSON Template<a class="headerlink" href="#trex-json-template" title="Permalink to this headline">¶</a></h1>
+<p>Whenever TRex is publishing live data, it uses JSON notation to describe the data-object.</p>
+<p>Each client may parse it differently, however this page will describe the values meaning when published by TRex server.</p>
+<div class="section" id="main-fields">
+<h2>Main Fields<a class="headerlink" href="#main-fields" title="Permalink to this headline">¶</a></h2>
+<p>Each TRex server-published JSON object contains data divided to main fields under which the actual data lays.</p>
+<p>These main fields are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="48%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Main field</th>
+<th class="head">Contains</th>
+<th class="head">Comments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#trex-global-field"><span>trex-global field</span></a></td>
+<td>Must-have data on TRex run,
+mainly regarding Tx/Rx and packet drops</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#tx-gen-field"><span>tx-gen field</span></a></td>
+<td>Data indicate the quality of the transmit process.
+In case histogram is zero it means that all packets
+were injected in the right time.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trex-latecny-field"><span>trex-latecny field</span></a></td>
+<td>Latency reports, containing latency data on
+generated data and on response traffic</td>
+<td rowspan="2"><ul class="first last simple">
+<li>Generated when latency
+test is enabled (<code class="docutils literal"><span class="pre">l</span></code>
+param)</li>
+<li><em>typo</em> on field key:
+will be fixed on next
+release</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trex-latecny-v2-field"><span>trex-latecny-v2 field</span></a></td>
+<td>Extended latency information</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these fields contains keys for field general data (such as its name) and its actual data, which is always stored under the <strong>&#8220;data&#8221;</strong> key.</p>
+<p>For example, in order to access some trex-global data, the access path would look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>AllData -&gt; trex-global -&gt; data -&gt; desired_info
+</pre></div>
+</div>
+</div>
+<div class="section" id="detailed-explanation">
+<h2>Detailed explanation<a class="headerlink" href="#detailed-explanation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="trex-global-field">
+<span id="id1"></span><h3>trex-global field<a class="headerlink" href="#trex-global-field" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="7%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub-key</th>
+<th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>m_cpu_util</td>
+<td>float</td>
+<td>CPU utilization (0-100)</td>
+</tr>
+<tr class="row-odd"><td>m_platform_factor</td>
+<td>float</td>
+<td>multiplier factor</td>
+</tr>
+<tr class="row-even"><td>m_tx_bps</td>
+<td>float</td>
+<td>total tx bit per second</td>
+</tr>
+<tr class="row-odd"><td>m_rx_bps</td>
+<td>float</td>
+<td>total rx bit per second</td>
+</tr>
+<tr class="row-even"><td>m_tx_pps</td>
+<td>float</td>
+<td>total tx packet per second</td>
+</tr>
+<tr class="row-odd"><td>m_tx_cps</td>
+<td>float</td>
+<td>total tx connection per second</td>
+</tr>
+<tr class="row-even"><td>m_tx_expected_cps</td>
+<td>float</td>
+<td>expected tx connection per second</td>
+</tr>
+<tr class="row-odd"><td>m_tx_expected_pps</td>
+<td>float</td>
+<td>expected tx packet per second</td>
+</tr>
+<tr class="row-even"><td>m_tx_expected_bps</td>
+<td>float</td>
+<td>expected tx bit per second</td>
+</tr>
+<tr class="row-odd"><td>m_rx_drop_bps</td>
+<td>float</td>
+<td>drop rate in bit per second</td>
+</tr>
+<tr class="row-even"><td>m_active_flows</td>
+<td>float</td>
+<td>active trex flows</td>
+</tr>
+<tr class="row-odd"><td>m_open_flows</td>
+<td>float</td>
+<td>open trex flows from startup (monotonically incrementing)</td>
+</tr>
+<tr class="row-even"><td>m_total_tx_pkts</td>
+<td>int</td>
+<td>total tx in packets</td>
+</tr>
+<tr class="row-odd"><td>m_total_rx_pkts</td>
+<td>int</td>
+<td>total rx in packets</td>
+</tr>
+<tr class="row-even"><td>m_total_tx_bytes</td>
+<td>int</td>
+<td>total tx in bytes</td>
+</tr>
+<tr class="row-odd"><td>m_total_rx_bytes</td>
+<td>int</td>
+<td>total rx in bytes</td>
+</tr>
+<tr class="row-even"><td>opackets-#</td>
+<td>int</td>
+<td>output packets (per interface)</td>
+</tr>
+<tr class="row-odd"><td>obytes-#</td>
+<td>int</td>
+<td>output bytes (per interface)</td>
+</tr>
+<tr class="row-even"><td>ipackets-#</td>
+<td>int</td>
+<td>input packet (per interface)</td>
+</tr>
+<tr class="row-odd"><td>ibytes-#</td>
+<td>int</td>
+<td>input bytes (per interface)</td>
+</tr>
+<tr class="row-even"><td>ierrors-#</td>
+<td>int</td>
+<td>input errors (per interface)</td>
+</tr>
+<tr class="row-odd"><td>oerrors-#</td>
+<td>int</td>
+<td>input errors (per interface)</td>
+</tr>
+<tr class="row-even"><td>m_total_tx_bps-#</td>
+<td>float</td>
+<td>total transmitted data in bit per second</td>
+</tr>
+<tr class="row-odd"><td>unknown</td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>m_total_nat_learn_error <a class="footnote-reference" href="#f1" id="id2">[1]</a></td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>m_total_nat_active <a class="footnote-reference" href="#f2" id="id3">[2]</a></td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>m_total_nat_no_fid <a class="footnote-reference" href="#f2" id="id4">[2]</a></td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>m_total_nat_time_out <a class="footnote-reference" href="#f2" id="id5">[2]</a></td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>m_total_nat_open <a class="footnote-reference" href="#f2" id="id6">[2]</a></td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tx-gen-field">
+<span id="id7"></span><h3>tx-gen field<a class="headerlink" href="#tx-gen-field" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="8%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub-key</th>
+<th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>realtime-hist</td>
+<td>dict</td>
+<td>histogram of transmission. See extended information about
+histogram object under <a class="reference internal" href="#histogram-object-fields"><span>Histogram object fields</span></a>.
+The attribute analyzed is time packet has been sent
+before/after it was intended to be</td>
+</tr>
+<tr class="row-odd"><td>unknown</td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trex-latecny-field">
+<span id="id8"></span><h3>trex-latecny field<a class="headerlink" href="#trex-latecny-field" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="10%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub-key</th>
+<th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>avg-#</td>
+<td>float</td>
+<td>average latency in usec (per interface)</td>
+</tr>
+<tr class="row-odd"><td>max-#</td>
+<td>float</td>
+<td>max latency in usec from the test start (per interface)</td>
+</tr>
+<tr class="row-even"><td>c-max-#</td>
+<td>float</td>
+<td>max in the last 1 sec window (per interface)</td>
+</tr>
+<tr class="row-odd"><td>error-#</td>
+<td>float</td>
+<td>errors in latency packets (per interface)</td>
+</tr>
+<tr class="row-even"><td>unknown</td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trex-latecny-v2-field">
+<span id="id9"></span><h3>trex-latecny-v2 field<a class="headerlink" href="#trex-latecny-v2-field" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="8%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub-key</th>
+<th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cpu_util</td>
+<td>float</td>
+<td>rx thread cpu % (this is not trex DP
+threads cpu%%)</td>
+</tr>
+<tr class="row-odd"><td>port-#</td>
+<td>dict</td>
+<td>Containing per interface
+information. See extended
+information under <code class="docutils literal"><span class="pre">port-#</span> <span class="pre">-&gt;</span>
+<span class="pre">key_name</span> <span class="pre">-&gt;</span> <span class="pre">sub_key</span></code></td>
+</tr>
+<tr class="row-even"><td>port-#-&gt;hist</td>
+<td>dict</td>
+<td>histogram of latency. See extended
+information about histogram object
+under <a class="reference internal" href="#histogram-object-fields"><span>Histogram object fields</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>port-#-&gt;stats</td>
+<td>dict</td>
+<td>Containing per interface
+information. See extended
+information under <code class="docutils literal"><span class="pre">port-#</span> <span class="pre">-&gt;</span>
+<span class="pre">key_name</span> <span class="pre">-&gt;</span> <span class="pre">sub_key</span></code></td>
+</tr>
+<tr class="row-even"><td>port-#-&gt;stats-&gt;m_tx_pkt_ok</td>
+<td>int</td>
+<td>total of try sent packets</td>
+</tr>
+<tr class="row-odd"><td>port-#-&gt;stats-&gt;m_pkt_ok</td>
+<td>int</td>
+<td>total of packets sent from hardware</td>
+</tr>
+<tr class="row-even"><td>port-#-&gt;stats-&gt;m_no_magic</td>
+<td>int</td>
+<td>rx error with no magic</td>
+</tr>
+<tr class="row-odd"><td>port-#-&gt;stats-&gt;m_no_id</td>
+<td>int</td>
+<td>rx errors with no id</td>
+</tr>
+<tr class="row-even"><td>port-#-&gt;stats-&gt;m_seq_error</td>
+<td>int</td>
+<td>error in seq number</td>
+</tr>
+<tr class="row-odd"><td>port-#-&gt;stats-&gt;m_length_error</td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>port-#-&gt;stats-&gt;m_rx_check</td>
+<td>int</td>
+<td>packets tested in rx</td>
+</tr>
+<tr class="row-odd"><td>unknown</td>
+<td>int</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="histogram-object-fields">
+<span id="id10"></span><h3>Histogram object fields<a class="headerlink" href="#histogram-object-fields" title="Permalink to this headline">¶</a></h3>
+<p>The histogram object is being used in number of place throughout the JSON object.
+The following section describes its fields in detail.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="7%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub-key</th>
+<th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>min_usec</td>
+<td>int</td>
+<td>min attribute value in usec. pkt with latency less than this value is not counted</td>
+</tr>
+<tr class="row-odd"><td>max_usec</td>
+<td>int</td>
+<td>max attribute value in usec</td>
+</tr>
+<tr class="row-even"><td>high_cnt</td>
+<td>int</td>
+<td>how many packets on which its attribute &gt; min_usec</td>
+</tr>
+<tr class="row-odd"><td>cnt</td>
+<td>int</td>
+<td>total packets from test startup</td>
+</tr>
+<tr class="row-even"><td>s_avg</td>
+<td>float</td>
+<td>average value from test startup</td>
+</tr>
+<tr class="row-odd"><td>histogram</td>
+<td>array</td>
+<td><dl class="first last docutils">
+<dt>histogram of relevant object by the following keys:</dt>
+<dd><ul class="first last simple">
+<li>key: value in usec</li>
+<li>val: number of packets</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="access-examples">
+<h2>Access Examples<a class="headerlink" href="#access-examples" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Available only in NAT and NAT learning operation (<code class="docutils literal"><span class="pre">learn</span></code> and <code class="docutils literal"><span class="pre">learn-verify</span></code> flags)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>, <a class="fn-backref" href="#id5">3</a>, <a class="fn-backref" href="#id6">4</a>)</em> Available only in NAT operation (<code class="docutils literal"><span class="pre">learn</span></code> flag)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../client_utils.html" class="btn btn-neutral float-right" title="Client Utilities" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exceptions.html" class="btn btn-neutral" title="trex_exceptions Exceptions module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Cisco Systems Inc..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trex_exceptions Exceptions module &mdash; TRex Control Plain 1.7.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/no_scrollbars.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TRex Control Plain 1.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="API Reference" href="index.html"/>
+        <link rel="next" title="TRex JSON Template" href="json_fields.html"/>
+        <link rel="prev" title="trex_client Module documentation" href="client_code.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> TRex Control Plain
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client_code.html">trex_client Module documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client_code.html#ctrexclient-class">CTRexClient class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client_code.html#ctrexresult-class">CTRexResult class</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">trex_exceptions Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json_fields.html">TRex JSON Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#main-fields">Main Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#detailed-explanation">Detailed explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-global-field">trex-global field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#tx-gen-field">tx-gen field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-latecny-field">trex-latecny field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#trex-latecny-v2-field">trex-latecny-v2 field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="json_fields.html#histogram-object-fields">Histogram object fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="json_fields.html#access-examples">Access Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_utils.html">Client Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packet_generator/index.html">TRex Packet Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html">CTRexPktBuilder class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html#packet-builder-exceptions">Packet Builder Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/examples.html">Packet Builder Usage Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/stream_export.html">Stream Export YAML syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#guidelines">Guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#export-format">Export Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-trex_yaml_gen">TRex YAML generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-general_utils">General Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#full-featured-interactive-shell">Full-featured interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#end-to-end-cycle">End-to-End cycle</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">TRex Control Plain</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Reference</a> &raquo;</li>
+      
+    <li>trex_exceptions Exceptions module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/exceptions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="module-trex_exceptions">
+<span id="trex-exceptions-exceptions-module"></span><h1>trex_exceptions Exceptions module<a class="headerlink" href="#module-trex_exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="trex_exceptions.CExceptionHandler">
+<em class="property">class </em><code class="descclassname">trex_exceptions.</code><code class="descname">CExceptionHandler</code><span class="sig-paren">(</span><em>exceptions</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#CExceptionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.CExceptionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>CExceptionHandler is responsible for generating TRex API related exceptions in client side.</p>
+<p>Instatiate a CExceptionHandler object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt>exceptions <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first">a list of all TRex acceptable exception objects.</p>
+<dl class="last docutils">
+<dt>default list:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#trex_exceptions.TRexException" title="trex_exceptions.TRexException"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexException</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexError" title="trex_exceptions.TRexError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexError</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexWarning" title="trex_exceptions.TRexWarning"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexWarning</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexInUseError" title="trex_exceptions.TRexInUseError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexInUseError</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexRequestDenied" title="trex_exceptions.TRexRequestDenied"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRequestDenied</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexRunFailedError" title="trex_exceptions.TRexRunFailedError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexRunFailedError</span></code></a></li>
+<li><a class="reference internal" href="#trex_exceptions.TRexIncompleteRunError" title="trex_exceptions.TRexIncompleteRunError"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexIncompleteRunError</span></code></a></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="trex_exceptions.CExceptionHandler.gen_exception">
+<code class="descname">gen_exception</code><span class="sig-paren">(</span><em>err</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#CExceptionHandler.gen_exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.CExceptionHandler.gen_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates an exception based on a general ProtocolError exception object <cite>err</cite>.</p>
+<p>When TRex is reserved, no other user can start new TRex runs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>err <span class="classifier-delimiter">:</span> <span class="classifier">exception</span></dt>
+<dd><p class="first last">a ProtocolError exception raised by <a class="reference internal" href="client_code.html#trex_client.CTRexClient" title="trex_client.CTRexClient"><code class="xref py py-class docutils literal"><span class="pre">trex_client.CTRexClient</span></code></a> class</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>A TRex exception from the exception list defined in class creation.</p>
+<p>If such exception wasn&#8217;t found, returns a TRexException exception</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.RPCError">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">RPCError</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#RPCError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.RPCError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the general RPC error exception class from which <a class="reference internal" href="#trex_exceptions.TRexException" title="trex_exceptions.TRexException"><code class="xref py py-exc docutils literal"><span class="pre">trex_exceptions.TRexException</span></code></a> inherits.</p>
+<p>Every exception in this class has as error format according to JSON-RPC convention convention: code, message and data.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexError">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexError</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the most general TRex exception.</p>
+<p>This exception isn&#8217;t used by default and will only when an unrelated to ProtocolError will occur, and it can&#8217;t be resolved to any of the deriviate exceptions.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexException">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexException</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexException" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the most general TRex exception.</p>
+<p>All exceptions inherits from this class has an error code and a default message which describes the most common use case of the error.</p>
+<p>This exception isn&#8217;t used by default and will only when an unrelated to ProtocolError will occur, and it can&#8217;t be resolved to any of the deriviate exceptions.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexInUseError">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexInUseError</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexInUseError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexInUseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates that TRex is currently in use</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexIncompleteRunError">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexIncompleteRunError</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexIncompleteRunError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexIncompleteRunError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates that TRex has failed due to some reason.
+This Exception is used when TRex process itself terminated with error fault or it has been terminated by an external intervention in the OS.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexRequestDenied">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexRequestDenied</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexRequestDenied"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexRequestDenied" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates the desired reques was denied by the server</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexRunFailedError">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexRunFailedError</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexRunFailedError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexRunFailedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates that TRex has failed due to some reason. This Exception is used when TRex process itself terminates due to unknown reason</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="trex_exceptions.TRexWarning">
+<em class="property">exception </em><code class="descclassname">trex_exceptions.</code><code class="descname">TRexWarning</code><span class="sig-paren">(</span><em>code</em>, <em>message</em>, <em>remote_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/trex_exceptions.html#TRexWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trex_exceptions.TRexWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates a warning from TRex server. When this exception raises it normally used to indicate required data isn&#8217;t ready yet</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="json_fields.html" class="btn btn-neutral float-right" title="TRex JSON Template" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="client_code.html" class="btn btn-neutral" title="trex_client Module documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Cisco Systems Inc..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="17" errors="0" failures="0" skip="12"><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_jumbo" time="0.003"><skipped type="unittest.case.SkipTest" message="No data in benchmark.yaml for test: test_jumbo, param: multiplier. Skipping."><![CDATA[SkipTest: No data in benchmark.yaml for test: test_jumbo, param: multiplier. Skipping.
+]]></skipped><system-out><![CDATA[Skip: No data in benchmark.yaml for test: test_jumbo, param: multiplier. Skipping.
+]]></system-out></testcase><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_routing_imix" time="65.462"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 168285.0, u'm_tx_expected_bps': 505787040.0, u'm_tx_expected_cps': 168285.0}
+Current tx rate:        {u'm_tx_bps': 511939200.0, u'm_tx_cps': 0.0, u'm_tx_pps': 170191.8}
+Maximum latency:        {u'max-0': 5, u'max-1': 5}
+Average latency:        {'all': 2.0, u'port0': 2.0, u'port1': 2.0}
+Average window latency: {'all': 1.979, u'port0': 1.979, u'port1': 1.979}
+Total drops:            -10
+Drop rate:              0.0
+History size so far:    62
+
+TRex CPU utilization: 1.24%, norm_cpu is : 82.81 Gb/core
+Err percent: 72.0497890762
+]]></system-out></testcase><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_routing_imix_64" time="35.199"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 224000.0, u'm_tx_expected_bps': 107520000.0, u'm_tx_expected_cps': 224000.0}
+Current tx rate:        {u'm_tx_bps': 115304904.0, u'm_tx_cps': 0.0, u'm_tx_pps': 225142.6}
+Maximum latency:        {u'max-0': 5, u'max-1': 5}
+Average latency:        {'all': 2.0, u'port0': 2.0, u'port1': 2.0}
+Average window latency: {'all': 1.959, u'port0': 1.959, u'port1': 1.959}
+Total drops:            0
+Drop rate:              0.0
+History size so far:    32
+
+TRex CPU utilization: 2.3%, norm_cpu is : 10.02 Gb/core
+Err percent: 21.0718145447
+]]></system-out></testcase><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_static_routing_imix" time="0.002"><skipped type="unittest.case.SkipTest" message="In loopback mode the test is same as test_routing_imix"><![CDATA[SkipTest: In loopback mode the test is same as test_routing_imix
+]]></skipped><system-out><![CDATA[Skip: In loopback mode the test is same as test_routing_imix
+]]></system-out></testcase><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_static_routing_imix_asymmetric" time="104.849"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 168285.0, u'm_tx_expected_bps': 505787040.0, u'm_tx_expected_cps': 168285.0}
+Current tx rate:        {u'm_tx_bps': 512097536.0, u'm_tx_cps': 0.0, u'm_tx_pps': 170242.5}
+Maximum latency:        {u'max-0': 5, u'max-1': 5}
+Average latency:        {'all': 2.0, u'port0': 2.0, u'port1': 2.0}
+Average window latency: {'all': 2.006, u'port0': 2.015, u'port1': 1.997}
+Total drops:            -64
+Drop rate:              0.0
+History size so far:    100
+
+TRex CPU utilization: 1.19%, norm_cpu is : 85.95 Gb/core
+Err percent: 69.9890404518
+]]></system-out></testcase><testcase classname="stateful_tests.trex_ipv6_test.CTRexIPv6_Test" name="test_ipv6_negative" time="0.002"><skipped type="unittest.case.SkipTest" message="The test checks ipv6 drops by device and we are in loopback setup"><![CDATA[SkipTest: The test checks ipv6 drops by device and we are in loopback setup
+]]></skipped><system-out><![CDATA[Skip: The test checks ipv6 drops by device and we are in loopback setup
+]]></system-out></testcase><testcase classname="stateful_tests.trex_ipv6_test.CTRexIPv6_Test" name="test_ipv6_simple" time="65.450"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 107567.8, u'm_tx_expected_bps': 514959200.0, u'm_tx_expected_cps': 2061.4}
+Current tx rate:        {u'm_tx_bps': 518425344.0, u'm_tx_cps': 2061.9, u'm_tx_pps': 109392.3}
+Maximum latency:        {u'max-0': 5, u'max-1': 5}
+Average latency:        {'all': 2.0, u'port0': 2.0, u'port1': 2.0}
+Average window latency: {'all': 1.979, u'port0': 1.979, u'port1': 1.979}
+Total drops:            9
+Drop rate:              0.0
+History size so far:    62
+
+TRex CPU utilization: 2.79%, norm_cpu is : 36.92 Gb/core
+Err percent: 89.3462807807
+]]></system-out></testcase><testcase classname="stateful_tests.trex_nat_test.CTRexNat_Test" name="test_nat_simple_mode1" time="0.000"><skipped type="unittest.case.SkipTest" message="The test can't run with following modes of given setup: set(['loopback']) "><![CDATA[SkipTest: The test can't run with following modes of given setup: set(['loopback']) 
+]]></skipped><system-out><![CDATA[Skip: The test can't run with following modes of given setup: set(['loopback']) 
+]]></system-out></testcase><testcase classname="stateful_tests.trex_nat_test.CTRexNat_Test" name="test_nat_simple_mode2" time="0.000"><skipped type="unittest.case.SkipTest" message="The test can't run with following modes of given setup: set(['loopback']) "><![CDATA[SkipTest: The test can't run with following modes of given setup: set(['loopback']) 
+]]></skipped><system-out><![CDATA[Skip: The test can't run with following modes of given setup: set(['loopback']) 
+]]></system-out></testcase><testcase classname="stateful_tests.trex_nat_test.CTRexNat_Test" name="test_nat_simple_mode3" time="0.000"><skipped type="unittest.case.SkipTest" message="The test can't run with following modes of given setup: set(['loopback']) "><![CDATA[SkipTest: The test can't run with following modes of given setup: set(['loopback']) 
+]]></skipped><system-out><![CDATA[Skip: The test can't run with following modes of given setup: set(['loopback']) 
+]]></system-out></testcase><testcase classname="stateful_tests.trex_nat_test.CTRexNoNat_Test" name="test_nat_learning" time="0.000"><skipped type="unittest.case.SkipTest" message="The test can't run with following modes of given setup: set(['loopback']) "><![CDATA[SkipTest: The test can't run with following modes of given setup: set(['loopback']) 
+]]></skipped><system-out><![CDATA[Skip: The test can't run with following modes of given setup: set(['loopback']) 
+]]></system-out></testcase><testcase classname="stateful_tests.trex_nbar_test.CTRexNbar_Test" name="test_nbar_simple" time="0.000"><skipped type="unittest.case.SkipTest" message="The test can't run with following modes of given setup: set(['loopback']) "><![CDATA[SkipTest: The test can't run with following modes of given setup: set(['loopback']) 
+]]></skipped><system-out><![CDATA[Skip: The test can't run with following modes of given setup: set(['loopback']) 
+]]></system-out></testcase><testcase classname="stateful_tests.trex_rx_test.CTRexRx_Test" name="test_rx_check_http" time="120.070"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 102712.0, u'm_tx_expected_bps': 764510400.0, u'm_tx_expected_cps': 2776.0}
+Current tx rate:        {u'm_tx_bps': 768851520.0, u'm_tx_cps': 2775.1, u'm_tx_pps': 104667.8}
+Maximum latency:        {u'max-0': 5, u'max-1': 5}
+Average latency:        {'all': 2.0, u'port0': 2.0, u'port1': 2.0}
+Average window latency: {'all': 1.997, u'port0': 1.997, u'port1': 1.997}
+Total drops:            -32
+Drop rate:              0.0
+History size so far:    100
+
+TRex CPU utilization: 1.96%, norm_cpu is : 78.56 Gb/core
+Err percent: 58.8267459865
+Total packets checked: 79480
+Latency counters: {'m_seq_error': 2, 'm_no_ipv4_option': 0, 'm_unsup_prot': 0, 'm_no_id': 0, 'm_no_magic': 0, 'm_tx_pkt_err': 0, 'm_length_error': 0}
+rx_check counters: {'m_err_oo_early': 0, 'm_err_open_with_no_fif_pkt': 0, 'm_err_fif_seen_twice': 0, 'm_err_no_magic': 0, 'm_err_oo_late': 0, 'm_err_flow_length_changed': 0, 'm_err_wrong_pkt_id': 0, 'm_err_oo_dup': 0, 'm_err_drop': 0, 'm_err_aged': 0}
+No errors in rx_check.
+]]></system-out></testcase><testcase classname="stateful_tests.trex_rx_test.CTRexRx_Test" name="test_rx_check_http_ipv6" time="0.002"><skipped type="unittest.case.SkipTest" message="No data in benchmark.yaml for test: test_rx_check_http_ipv6, param: cores. Skipping."><![CDATA[SkipTest: No data in benchmark.yaml for test: test_rx_check_http_ipv6, param: cores. Skipping.
+]]></skipped><system-out><![CDATA[Skip: No data in benchmark.yaml for test: test_rx_check_http_ipv6, param: cores. Skipping.
+]]></system-out></testcase><testcase classname="stateful_tests.trex_rx_test.CTRexRx_Test" name="test_rx_check_http_negative" time="0.003"><skipped type="unittest.case.SkipTest" message="This test uses NAT, not relevant for loopback"><![CDATA[SkipTest: This test uses NAT, not relevant for loopback
+]]></skipped><system-out><![CDATA[Skip: This test uses NAT, not relevant for loopback
+]]></system-out></testcase><testcase classname="stateful_tests.trex_rx_test.CTRexRx_Test" name="test_rx_check_sfr" time="0.003"><skipped type="unittest.case.SkipTest" message="No data in benchmark.yaml for test: test_rx_check_sfr, param: cores. Skipping."><![CDATA[SkipTest: No data in benchmark.yaml for test: test_rx_check_sfr, param: cores. Skipping.
+]]></skipped><system-out><![CDATA[Skip: No data in benchmark.yaml for test: test_rx_check_sfr, param: cores. Skipping.
+]]></system-out></testcase><testcase classname="stateful_tests.trex_rx_test.CTRexRx_Test" name="test_rx_check_sfr_ipv6" time="0.003"><skipped type="unittest.case.SkipTest" message="No data in benchmark.yaml for test: test_rx_check_sfr_ipv6, param: cores. Skipping."><![CDATA[SkipTest: No data in benchmark.yaml for test: test_rx_check_sfr_ipv6, param: cores. Skipping.
+]]></skipped><system-out><![CDATA[Skip: No data in benchmark.yaml for test: test_rx_check_sfr_ipv6, param: cores. Skipping.
+]]></system-out></testcase></testsuite>

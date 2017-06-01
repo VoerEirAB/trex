@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="1" errors="0" failures="0" skip="0"><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_short_flow_high_active2" time="71.704"><system-out><![CDATA[
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 30000000.0, u'm_tx_expected_bps': 15840000000.0, u'm_tx_expected_cps': 3000000.0}
+Current tx rate:        {u'm_tx_bps': 13613599744.0, u'm_tx_cps': 2578669.0, u'm_tx_pps': 25783318.0}
+Minimum latency:        {u'min-2': 10, u'min-3': 10, u'min-0': 10, u'min-1': 10}
+Maximum latency:        {u'max-0': 5, u'max-1': 5, u'max-2': 5, u'max-3': 5}
+Average latency:        {'all': 3.75, u'port2': 4.0, u'port3': 4.0, u'port0': 3.8, u'port1': 3.2}
+Average window latency: {'all': 3.944, u'port2': 3.965, u'port3': 3.952, u'port0': 3.94, u'port1': 3.921}
+Total drops:            0
+Drop rate:              0.0
+History size so far:    62
+
+TRex CPU utilization: 55.95%, norm_cpu is : 3.99 Gb/core
+Err percent: 99.6012705684
+]]></system-out></testcase></testsuite>

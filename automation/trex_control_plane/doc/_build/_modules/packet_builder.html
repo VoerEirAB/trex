@@ -1,0 +1,1328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>packet_builder &mdash; TRex Control Plain 1.7.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/no_scrollbars.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TRex Control Plain 1.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> TRex Control Plain
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/client_code.html">trex_client Module documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/client_code.html#ctrexclient-class">CTRexClient class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/client_code.html#ctrexresult-class">CTRexResult class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/exceptions.html">trex_exceptions Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/json_fields.html">TRex JSON Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#main-fields">Main Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#detailed-explanation">Detailed explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-global-field">trex-global field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#tx-gen-field">tx-gen field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-latecny-field">trex-latecny field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-latecny-v2-field">trex-latecny-v2 field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#histogram-object-fields">Histogram object fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#access-examples">Access Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_utils.html">Client Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packet_generator/index.html">TRex Packet Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html">CTRexPktBuilder class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html#packet-builder-exceptions">Packet Builder Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/examples.html">Packet Builder Usage Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/stream_export.html">Stream Export YAML syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#guidelines">Guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#export-format">Export Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-trex_yaml_gen">TRex YAML generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-general_utils">General Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#full-featured-interactive-shell">Full-featured interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#end-to-end-cycle">End-to-End cycle</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">TRex Control Plain</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      
+    <li>packet_builder</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for packet_builder</h1><div class="highlight"><pre>
+<span class="c">#!/router/bin/python</span>
+
+<span class="kn">import</span> <span class="nn">external_packages</span>
+<span class="kn">import</span> <span class="nn">dpkt</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">binascii</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+
+<div class="viewcode-block" id="CTRexPktBuilder"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder">[docs]</a><span class="k">class</span> <span class="nc">CTRexPktBuilder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class defines the TRex API of building a packet using dpkt package.</span>
+<span class="sd">    Using this class the user can also define how TRex will handle the packet by specifying the VM setting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_pkt_size</span><span class="o">=</span><span class="n">dpkt</span><span class="o">.</span><span class="n">ethernet</span><span class="o">.</span><span class="n">ETH_LEN_MAX</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Instantiate a CTRexPktBuilder object</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">             None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_pkt_size</span> <span class="o">=</span> <span class="n">max_pkt_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload_gen</span> <span class="o">=</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexPayloadGen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_packet</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_pkt_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span> <span class="o">=</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.add_pkt_layer"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.add_pkt_layer">[docs]</a>    <span class="k">def</span> <span class="nf">add_pkt_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">pkt_layer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method adds additional header to the already existing packet</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l2&quot;, &quot;l4_tcp&quot;, etc.</span>
+
+<span class="sd">            pkt_layer : dpkt.Packet obj</span>
+<span class="sd">                a dpkt object, generally from higher layer, that will be added on top of existing layer.</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`ValueError`, in case the desired layer_name already exists.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pkt_layer</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">Packet</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">layer_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Given layer name &#39;{0}&#39; already exists.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dup_pkt</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">pkt_layer</span><span class="p">)</span>  <span class="c"># using copy of layer to avoid cyclic packets that may lead to infinite loop</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span><span class="p">:</span>     <span class="c"># this is the first header added</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span> <span class="o">=</span> <span class="n">dup_pkt</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">dup_pkt</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="n">dup_pkt</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">dup_pkt</span>
+            <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_ip_layer_addr"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_ip_layer_addr">[docs]</a>    <span class="k">def</span> <span class="nf">set_ip_layer_addr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">ip_addr</span><span class="p">,</span> <span class="n">ip_type</span><span class="o">=</span><span class="s">&quot;ipv4&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets the IP address fields of an IP header (source or destination, for both IPv4 and IPv6)</span>
+<span class="sd">        using a human readable addressing representation.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l3_ip&quot;, etc.</span>
+
+<span class="sd">            attr: str</span>
+<span class="sd">                a string representation of the sub-field to be set:</span>
+
+<span class="sd">                + &quot;src&quot; for source</span>
+<span class="sd">                + &quot;dst&quot; for destination</span>
+
+<span class="sd">            ip_addr: str</span>
+<span class="sd">                a string representation of the IP address to be set.</span>
+<span class="sd">                Example: &quot;10.0.0.1&quot; for IPv4, or &quot;5001::DB8:1:3333:1:1&quot; for IPv6</span>
+
+<span class="sd">            ip_type : str</span>
+<span class="sd">                a string representation of the IP version to be set:</span>
+
+<span class="sd">                + &quot;ipv4&quot; for IPv4</span>
+<span class="sd">                + &quot;ipv6&quot; for IPv6</span>
+
+<span class="sd">                Default: **ipv4**</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`ValueError`, in case the desired layer_name is not an IP layer</span>
+<span class="sd">            + :exc:`KeyError`, in case the desired layer_name does not exists.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">IP</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip6</span><span class="o">.</span><span class="n">IP6</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;The specified layer &#39;{0}&#39; is not of IPv4/IPv6 type.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">decoded_ip</span> <span class="o">=</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_ip_addr</span><span class="p">(</span><span class="n">ip_addr</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">decoded_ip</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Specified layer &#39;{0}&#39; doesn&#39;t exist on packet.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_ipv6_layer_addr"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_ipv6_layer_addr">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipv6_layer_addr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">ip_addr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets the IPv6 address fields of an IP header (source or destination)</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l3_ip&quot;, etc.</span>
+
+<span class="sd">            attr: str</span>
+<span class="sd">                a string representation of the sub-field to be set:</span>
+
+<span class="sd">                + &quot;src&quot; for source</span>
+<span class="sd">                + &quot;dst&quot; for destination</span>
+
+<span class="sd">            ip_addr: str</span>
+<span class="sd">                a string representation of the IP address to be set.</span>
+<span class="sd">                Example: &quot;5001::DB8:1:3333:1:1&quot;</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`ValueError`, in case the desired layer_name is not an IPv6 layer</span>
+<span class="sd">            + :exc:`KeyError`, in case the desired layer_name does not exists.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_ip_layer_addr</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">ip_addr</span><span class="p">,</span> <span class="n">ip_type</span><span class="o">=</span><span class="s">&quot;ipv6&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_eth_layer_addr"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_eth_layer_addr">[docs]</a>    <span class="k">def</span> <span class="nf">set_eth_layer_addr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">mac_addr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets the ethernet address fields of an Ethernet header (source or destination)</span>
+<span class="sd">        using a human readable addressing representation.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l2&quot;, etc.</span>
+
+<span class="sd">            attr: str</span>
+<span class="sd">                a string representation of the sub-field to be set:</span>
+<span class="sd">                + &quot;src&quot; for source</span>
+<span class="sd">                + &quot;dst&quot; for destination</span>
+
+<span class="sd">            mac_addr: str</span>
+<span class="sd">                a string representation of the MAC address to be set.</span>
+<span class="sd">                Example: &quot;00:de:34:ef:2e:f4&quot;.</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`ValueError`, in case the desired layer_name is not an Ethernet layer</span>
+<span class="sd">            + :exc:`KeyError`, in case the desired layer_name does not exists.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ethernet</span><span class="o">.</span><span class="n">Ethernet</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;The specified layer &#39;{0}&#39; is not of Ethernet type.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">decoded_mac</span> <span class="o">=</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_mac_addr</span><span class="p">(</span><span class="n">mac_addr</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">decoded_mac</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Specified layer &#39;{0}&#39; doesn&#39;t exist on packet.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_layer_attr"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_layer_attr">[docs]</a>    <span class="k">def</span> <span class="nf">set_layer_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">toggle_bit</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method enables the user to change a value of a previously defined packet layer.</span>
+<span class="sd">        This method isn&#39;t to be used to set the data attribute of a packet with payload.</span>
+<span class="sd">        Use :func:`packet_builder.CTRexPktBuilder.set_payload` instead.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l2&quot;, &quot;l4_tcp&quot;, etc.</span>
+
+<span class="sd">            attr : str</span>
+<span class="sd">                a string representing the attribute to be changed on desired layer</span>
+
+<span class="sd">            val :</span>
+<span class="sd">                value of attribute.</span>
+
+<span class="sd">            toggle_bit : bool</span>
+<span class="sd">                Indicating if trying to set a specific bit of a field, such as &quot;do not fragment&quot; bit of IP layer.</span>
+
+<span class="sd">                Default: **False**</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`KeyError`, in case of missing layer (the desired layer isn&#39;t part of packet)</span>
+<span class="sd">            + :exc:`ValueError`, in case invalid attribute to the specified layer.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+            <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s">&#39;data&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">Packet</span><span class="p">):</span>
+                <span class="c"># Don&#39;t allow setting &#39;data&#39; attribute</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Set a data attribute with object that is not dpkt.Packet is not allowed using &quot;</span>
+                                 <span class="s">&quot;set_layer_attr method.</span><span class="se">\n</span><span class="s">Use set_payload method instead.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">toggle_bit</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span> <span class="o">|</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s">&#39;data&#39;</span><span class="p">:</span>
+                        <span class="c"># re-evaluate packet from the start, possible broken link between layers</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_reevaluate_packet</span><span class="p">(</span><span class="n">layer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Given attr name &#39;{0}&#39; doesn&#39;t exists on specified layer ({1}).&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span>
+                                                                                                         <span class="n">attr</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Specified layer &#39;{0}&#39; doesn&#39;t exist on packet.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_layer_bit_attr"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_layer_bit_attr">[docs]</a>    <span class="k">def</span> <span class="nf">set_layer_bit_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method enables the user to set the value of a field smaller that 1 Byte in size.</span>
+<span class="sd">        This method isn&#39;t used to set full-sized fields value (&gt;= 1 byte).</span>
+<span class="sd">        Use :func:`packet_builder.CTRexPktBuilder.set_layer_attr` instead.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name: str</span>
+<span class="sd">                a string representing the name of the layer.</span>
+<span class="sd">                Example: &quot;l2&quot;, &quot;l4_tcp&quot;, etc.</span>
+
+<span class="sd">            attr : str</span>
+<span class="sd">                a string representing the attribute to be set on desired layer</span>
+
+<span class="sd">            val : int</span>
+<span class="sd">                value of attribute.</span>
+<span class="sd">                This value will be set &quot;ontop&quot; of the existing value using bitwise &quot;OR&quot; operation.</span>
+
+<span class="sd">                .. tip:: It is very useful to use dpkt constants to define the values of these fields.</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`KeyError`, in case of missing layer (the desired layer isn&#39;t part of packet)</span>
+<span class="sd">            + :exc:`ValueError`, in case invalid attribute to the specified layer.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_layer_attr</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.set_pkt_payload"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.set_pkt_payload">[docs]</a>    <span class="k">def</span> <span class="nf">set_pkt_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets a payload to the topmost layer of the generated packet.</span>
+<span class="sd">        This method isn&#39;t to be used to set another networking layer to the packet.</span>
+<span class="sd">        Use :func:`packet_builder.CTRexPktBuilder.set_layer_attr` instead.</span>
+
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            payload:</span>
+<span class="sd">                a payload to be added to the packet at the topmost layer.</span>
+<span class="sd">                this object cannot be of type dpkt.Packet.</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`AttributeError`, in case no underlying header to host the payload.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">payload</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;The so far built packet doesn&#39;t contain an option for payload attachment.</span><span class="se">\n</span><span class="s">&quot;</span>
+                                 <span class="s">&quot;Make sure to set appropriate underlying header before adding payload&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.load_packet"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.load_packet">[docs]</a>    <span class="k">def</span> <span class="nf">load_packet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method enables the user to change a value of a previously defined packet layer.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            packet: dpkt.Packet obj</span>
+<span class="sd">                a dpkt object that represents a packet.</span>
+
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`CTRexPktBuilder.IPAddressError`, in case invalid ip type option specified.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">Packet</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span>
+        <span class="c"># analyze packet to layers</span>
+        <span class="n">tmp_layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp_layer</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">Packet</span><span class="p">):</span>
+                <span class="n">layer_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gen_layer_name</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tmp_layer</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_layer</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="n">tmp_layer</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c"># check existence of upper layer</span>
+                    <span class="n">tmp_layer</span> <span class="o">=</span> <span class="n">tmp_layer</span><span class="o">.</span><span class="n">data</span>
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                    <span class="c"># this is the most upper header</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="s">&#39;pkt_final_payload&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_layer</span><span class="o">.</span><span class="n">data</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="s">&#39;pkt_final_payload&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_layer</span>
+                <span class="k">break</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.get_packet"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.get_packet">[docs]</a>    <span class="k">def</span> <span class="nf">get_packet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">get_ptr</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method provides access to the built packet, as an instance or as a pointer to packet itself.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            get_ptr : bool</span>
+<span class="sd">                indicate whether to get a reference to packet or a copy.</span>
+<span class="sd">                Use only in advanced modes</span>
+<span class="sd">                if set to true, metadata for packet is cleared, and any further modification is not guaranteed.</span>
+
+<span class="sd">                default value : False</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            + the current packet built by CTRexPktBuilder object.</span>
+<span class="sd">            + None if packet is empty</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">get_ptr</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_packet</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.get_layer"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.get_layer">[docs]</a>    <span class="k">def</span> <span class="nf">get_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method provides access to a specific layer of the packet, as a **copy of the layer instance**.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            layer_name : str</span>
+<span class="sd">                the name given to desired layer</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            + a copy of the desired layer of the current packet if exists.</span>
+<span class="sd">            + None if no such layer</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layer_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span> <span class="k">if</span> <span class="n">layer</span> <span class="k">else</span> <span class="bp">None</span>
+
+    <span class="c"># VM access methods</span></div>
+    <span class="k">def</span> <span class="nf">set_vm_ip_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_layer_name</span><span class="p">,</span> <span class="n">ip_field</span><span class="p">,</span>
+                        <span class="n">ip_init</span><span class="p">,</span> <span class="n">ip_start</span><span class="p">,</span> <span class="n">ip_end</span><span class="p">,</span> <span class="n">add_value</span><span class="p">,</span>
+                        <span class="n">operation</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">val_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                        <span class="n">ip_type</span><span class="o">=</span><span class="s">&quot;ipv4&quot;</span><span class="p">,</span> <span class="n">add_checksum_inst</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ip_field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;set_vm_ip_range only available for source (&#39;src&#39;) or destination (&#39;dst&#39;) ip addresses&quot;</span><span class="p">)</span>
+        <span class="c"># set differences between IPv4 and IPv6</span>
+        <span class="k">if</span> <span class="n">ip_type</span> <span class="o">==</span> <span class="s">&quot;ipv4&quot;</span><span class="p">:</span>
+            <span class="n">ip_class</span> <span class="o">=</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">IP</span>
+            <span class="n">ip_addr_size</span> <span class="o">=</span> <span class="n">val_size</span> <span class="k">if</span> <span class="n">val_size</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="k">else</span> <span class="mi">4</span>
+        <span class="k">elif</span> <span class="n">ip_type</span> <span class="o">==</span> <span class="s">&quot;ipv6&quot;</span><span class="p">:</span>
+            <span class="n">ip_class</span> <span class="o">=</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip6</span><span class="o">.</span><span class="n">IP6</span>
+            <span class="n">ip_addr_size</span> <span class="o">=</span> <span class="n">val_size</span> <span class="k">if</span> <span class="n">val_size</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="k">else</span> <span class="mi">4</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">IPAddressError</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_verify_layer_prop</span><span class="p">(</span><span class="n">ip_layer_name</span><span class="p">,</span> <span class="n">ip_class</span><span class="p">)</span>
+        <span class="n">trim_size</span> <span class="o">=</span> <span class="n">ip_addr_size</span><span class="o">*</span><span class="mi">2</span>
+        <span class="n">init_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_ip_addr</span><span class="p">(</span><span class="n">ip_init</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="n">start_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_ip_addr</span><span class="p">(</span><span class="n">ip_start</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="n">end_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_ip_addr</span><span class="p">(</span><span class="n">ip_end</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="c"># All validations are done, start adding VM instructions</span>
+        <span class="n">flow_var_name</span> <span class="o">=</span> <span class="s">&quot;{layer}__{field}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="n">ip_layer_name</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">ip_field</span><span class="p">)</span>
+        <span class="n">hdr_offset</span><span class="p">,</span> <span class="n">field_abs_offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_offset</span><span class="p">(</span><span class="n">ip_layer_name</span><span class="p">,</span> <span class="n">ip_field</span><span class="p">,</span> <span class="n">ip_addr_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_flow_man_inst</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">ip_addr_size</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                                  <span class="n">init_value</span><span class="o">=</span><span class="n">init_val</span><span class="p">,</span>
+                                  <span class="n">min_value</span><span class="o">=</span><span class="n">start_val</span><span class="p">,</span>
+                                  <span class="n">max_value</span><span class="o">=</span><span class="n">end_val</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_write_flow_inst</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="n">field_abs_offset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="s">&quot;add_value&quot;</span><span class="p">,</span> <span class="n">add_value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="s">&quot;is_big_endian&quot;</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ip_type</span> <span class="o">==</span> <span class="s">&quot;ipv4&quot;</span> <span class="ow">and</span> <span class="n">add_checksum_inst</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_fix_checksum_inst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ip_layer_name</span><span class="p">),</span> <span class="n">hdr_offset</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_vm_eth_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eth_layer_name</span><span class="p">,</span> <span class="n">eth_field</span><span class="p">,</span>
+                         <span class="n">mac_init</span><span class="p">,</span> <span class="n">mac_start</span><span class="p">,</span> <span class="n">mac_end</span><span class="p">,</span> <span class="n">add_value</span><span class="p">,</span>
+                         <span class="n">operation</span><span class="p">,</span> <span class="n">val_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">eth_field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;set_vm_eth_range only available for source (&#39;src&#39;) or destination (&#39;dst&#39;) eth addresses&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_verify_layer_prop</span><span class="p">(</span><span class="n">eth_layer_name</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ethernet</span><span class="o">.</span><span class="n">Ethernet</span><span class="p">)</span>
+        <span class="n">eth_addr_size</span> <span class="o">=</span> <span class="n">val_size</span> <span class="k">if</span> <span class="n">val_size</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="k">else</span> <span class="mi">4</span>
+        <span class="n">trim_size</span> <span class="o">=</span> <span class="n">eth_addr_size</span><span class="o">*</span><span class="mi">2</span>
+        <span class="n">init_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_mac_addr</span><span class="p">(</span><span class="n">mac_init</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="n">start_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_mac_addr</span><span class="p">(</span><span class="n">mac_start</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="n">end_val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">_decode_mac_addr</span><span class="p">(</span><span class="n">mac_end</span><span class="p">))[</span><span class="o">-</span><span class="n">trim_size</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="c"># All validations are done, start adding VM instructions</span>
+        <span class="n">flow_var_name</span> <span class="o">=</span> <span class="s">&quot;{layer}__{field}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="n">eth_layer_name</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">eth_field</span><span class="p">)</span>
+        <span class="n">hdr_offset</span><span class="p">,</span> <span class="n">field_abs_offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_offset</span><span class="p">(</span><span class="n">eth_layer_name</span><span class="p">,</span> <span class="n">eth_field</span><span class="p">,</span> <span class="n">eth_addr_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_flow_man_inst</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                                  <span class="n">init_value</span><span class="o">=</span><span class="n">init_val</span><span class="p">,</span>
+                                  <span class="n">min_value</span><span class="o">=</span><span class="n">start_val</span><span class="p">,</span>
+                                  <span class="n">max_value</span><span class="o">=</span><span class="n">end_val</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_write_flow_inst</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="n">field_abs_offset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="s">&quot;add_value&quot;</span><span class="p">,</span> <span class="n">add_value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">flow_var_name</span><span class="p">,</span> <span class="s">&quot;is_big_endian&quot;</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_vm_custom_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">hdr_field</span><span class="p">,</span>
+                            <span class="n">init_val</span><span class="p">,</span> <span class="n">start_val</span><span class="p">,</span> <span class="n">end_val</span><span class="p">,</span> <span class="n">add_val</span><span class="p">,</span> <span class="n">val_size</span><span class="p">,</span>
+                            <span class="n">operation</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">range_name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">add_checksum_inst</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="c"># verify input validity for init/start/end values</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="n">init_val</span><span class="p">,</span> <span class="n">start_val</span><span class="p">,</span> <span class="n">end_val</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;init/start/end values are expected integers, but received type &#39;{0}&#39;&quot;</span><span class="o">.</span>
+                                 <span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_verify_layer_prop</span><span class="p">(</span><span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">field_name</span><span class="o">=</span><span class="n">hdr_field</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">range_name</span><span class="p">:</span>
+            <span class="n">range_name</span> <span class="o">=</span> <span class="s">&quot;{layer}__{field}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">hdr_field</span><span class="p">)</span>
+        <span class="n">trim_size</span> <span class="o">=</span> <span class="n">val_size</span><span class="o">*</span><span class="mi">2</span>
+        <span class="n">hdr_offset</span><span class="p">,</span> <span class="n">field_abs_offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_offset</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">hdr_field</span><span class="p">,</span> <span class="n">val_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_flow_man_inst</span><span class="p">(</span><span class="n">range_name</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">val_size</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                                  <span class="n">init_value</span><span class="o">=</span><span class="n">init_val</span><span class="p">,</span>
+                                  <span class="n">min_value</span><span class="o">=</span><span class="n">start_val</span><span class="p">,</span>
+                                  <span class="n">max_value</span><span class="o">=</span><span class="n">end_val</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_write_flow_inst</span><span class="p">(</span><span class="n">range_name</span><span class="p">,</span> <span class="n">field_abs_offset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">range_name</span><span class="p">,</span> <span class="s">&quot;add_value&quot;</span><span class="p">,</span> <span class="n">add_val</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_vm_off_inst_field</span><span class="p">(</span><span class="n">range_name</span><span class="p">,</span> <span class="s">&quot;is_big_endian&quot;</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layer_name</span><span class="p">),</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">IP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">add_checksum_inst</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_fix_checksum_inst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layer_name</span><span class="p">),</span> <span class="n">hdr_offset</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_vm_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.dump_pkt"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.dump_pkt">[docs]</a>    <span class="k">def</span> <span class="nf">dump_pkt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Dumps the packet as a decimal array of bytes (each item x gets value between 0-255)</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            + packet representation as array of bytes</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`CTRexPktBuilder.EmptyPacketError`, in case packet is empty.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">EmptyPacketError</span><span class="p">()</span>
+        <span class="n">pkt_in_hex</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_packet</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;binary&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">pkt_in_hex</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pkt_in_hex</span><span class="p">),</span> <span class="mi">2</span><span class="p">)],</span>
+                <span class="s">&quot;meta&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">}</span>
+        <span class="c"># return [pkt_in_hex[i:i+2] for i in range(0, len(pkt_in_hex), 2)]</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.dump_pkt_to_pcap"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.dump_pkt_to_pcap">[docs]</a>    <span class="k">def</span> <span class="nf">dump_pkt_to_pcap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">ts</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Dumps the packet as a decimal array of bytes (each item x gets value between 0-255)</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            file_path : str</span>
+<span class="sd">                a path (including filename) to which to write to pcap file to.</span>
+
+<span class="sd">            ts : int</span>
+<span class="sd">                a timestamp to attach to the packet when dumped to pcap file.</span>
+<span class="sd">                if ts in None, then time.time() is used to set the timestamp.</span>
+
+<span class="sd">                Default: **None**</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`CTRexPktBuilder.EmptyPacketError`, in case packet is empty.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">EmptyPacketError</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">pcap_wr</span> <span class="o">=</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">pcap</span><span class="o">.</span><span class="n">Writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="n">pcap_wr</span><span class="o">.</span><span class="n">writepkt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_packet</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;The provided path could not be accessed&quot;</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">export_pkt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">link_pcap</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pcap_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pcap_ts</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="c"># ----- internal methods ----- #</span>
+    <span class="k">def</span> <span class="nf">_reevaluate_packet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
+        <span class="n">cur_layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packet</span>
+        <span class="n">known_layers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">found_layers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">pointing_layer_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_pointing_layer</span><span class="p">(</span><span class="n">known_layers</span><span class="p">,</span> <span class="n">cur_layer</span><span class="p">)</span>
+            <span class="n">found_layers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pointing_layer_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer_name</span><span class="p">]</span> <span class="ow">is</span> <span class="n">cur_layer</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_top_layer</span> <span class="o">=</span> <span class="n">cur_layer</span>
+                <span class="n">disconnected_layers</span> <span class="o">=</span> <span class="n">known_layers</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">found_layers</span><span class="p">)</span>
+                <span class="c"># remove disconnected layers</span>
+                <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">disconnected_layers</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cur_layer</span> <span class="o">=</span> <span class="n">cur_layer</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">_gen_layer_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_class_name</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer_class_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">layer_name</span> <span class="o">=</span> <span class="n">layer_class_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">tmp_name</span> <span class="o">=</span> <span class="s">&quot;{name}_{id}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">tmp_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">tmp_name</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">_find_pointing_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">known_layers</span><span class="p">,</span> <span class="n">layer_obj</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">known_layers</span><span class="p">,</span> <span class="nb">set</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">known_layers</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span> <span class="ow">is</span> <span class="n">layer_obj</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">layer</span>
+
+    <span class="k">def</span> <span class="nf">_calc_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">hdr_field</span><span class="p">,</span> <span class="n">hdr_field_size</span><span class="p">):</span>
+        <span class="n">pkt_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layer_name</span><span class="p">)</span>
+        <span class="n">hdr_offset</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_packet</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">pkt_header</span><span class="p">)</span>
+        <span class="n">inner_hdr_offsets</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">pkt_header</span><span class="o">.</span><span class="n">__hdr__</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">field</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">hdr_field</span><span class="p">:</span>
+                <span class="n">field_size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">field_size</span> <span class="o">==</span> <span class="n">hdr_field_size</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="k">elif</span> <span class="n">field_size</span> <span class="o">&lt;</span> <span class="n">hdr_field_size</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerError</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span>
+                                                           <span class="s">&quot;The specified field &#39;{0}&#39; size is smaller than given range&quot;</span>
+                                                           <span class="s">&quot; size (&#39;{1}&#39;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdr_field</span><span class="p">,</span> <span class="n">hdr_field_size</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">inner_hdr_offsets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field_size</span> <span class="o">-</span> <span class="n">hdr_field_size</span><span class="p">)</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">inner_hdr_offsets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">hdr_offset</span><span class="p">,</span> <span class="n">hdr_offset</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inner_hdr_offsets</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_verify_layer_prop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">layer_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">field_name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">layer_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerError</span><span class="p">(</span><span class="n">layer_name</span><span class="p">)</span>
+        <span class="n">pkt_layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_by_hdr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layer_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">layer_type</span><span class="p">:</span>
+            <span class="c"># check for layer type</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pkt_layer</span><span class="p">,</span> <span class="n">layer_type</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerTypeError</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">pkt_layer</span><span class="p">),</span> <span class="n">layer_type</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">field_name</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pkt_layer</span><span class="p">,</span> <span class="n">field_name</span><span class="p">):</span>
+            <span class="c"># check if field exists on certain header</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerError</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="s">&quot;The specified field &#39;{0}&#39; does not exists on &quot;</span>
+                                                               <span class="s">&quot;given packet layer (&#39;{1}&#39;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span>
+                                                                                                   <span class="n">layer_name</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_decode_mac_addr</span><span class="p">(</span><span class="n">mac_addr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Static method to test for MAC address validity.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            mac_addr : str</span>
+<span class="sd">                a string representing an MAC address, separated by &#39;:&#39; or &#39;-&#39;.</span>
+
+<span class="sd">                examples: &#39;00:de:34:ef:2e:f4&#39;, &#39;00-de-34-ef-2e-f4</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            + an hex-string representation of the MAC address.</span>
+<span class="sd">              for example, ip 00:de:34:ef:2e:f4 will return &#39;\x00\xdeU\xef.\xf4&#39;</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`CTRexPktBuilder.MACAddressError`, in case invalid ip type option specified.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tmp_mac</span> <span class="o">=</span> <span class="n">mac_addr</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&quot;[0-9a-f]{2}([-:])[0-9a-f]{2}(</span><span class="se">\\</span><span class="s">1[0-9a-f]{2}){4}$&quot;</span><span class="p">,</span> <span class="n">tmp_mac</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">tmp_mac</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">))</span>
+            <span class="c"># another option for both Python 2 and 3: </span>
+            <span class="c"># codecs.decode(tmp_mac.replace(&#39;:&#39;, &#39;&#39;), &#39;hex&#39;)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">MACAddressError</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_decode_ip_addr</span><span class="p">(</span><span class="n">ip_addr</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Static method to test for IPv4/IPv6 address validity.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            ip_addr : str</span>
+<span class="sd">                a string representing an IP address (IPv4/IPv6)</span>
+
+<span class="sd">            ip_type : str</span>
+<span class="sd">                The type of IP to be checked.</span>
+<span class="sd">                Valid types: &quot;ipv4&quot;, &quot;ipv6&quot;.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">            + an hex-string representation of the ip address.</span>
+<span class="sd">              for example, ip 1.2.3.4 will return &#39;\x01\x02\x03\x04&#39;</span>
+
+<span class="sd">        :raises:</span>
+<span class="sd">            + :exc:`CTRexPktBuilder.IPAddressError`, in case invalid ip type option specified.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ip_type</span> <span class="o">==</span> <span class="s">&quot;ipv4&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_pton</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">ip_addr</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>  <span class="c"># no inet_pton here, sorry</span>
+                <span class="c"># try:</span>
+                <span class="k">return</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_aton</span><span class="p">(</span><span class="n">ip_addr</span><span class="p">)</span>
+                <span class="c"># except socket.error:</span>
+                <span class="c">#     return False</span>
+                <span class="c"># return ip_addr.count(&#39;.&#39;) == 3</span>
+            <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>  <span class="c"># not a valid address</span>
+                <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">IPAddressError</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">ip_type</span> <span class="o">==</span> <span class="s">&quot;ipv6&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_pton</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET6</span><span class="p">,</span> <span class="n">ip_addr</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>  <span class="c"># not a valid address</span>
+                <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">IPAddressError</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">IPAddressError</span><span class="p">()</span>
+
+    <span class="c"># ------ private classes ------ #</span>
+    <span class="k">class</span> <span class="nc">CTRexPayloadGen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet_ref</span><span class="p">,</span> <span class="n">max_pkt_size</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pkt_ref</span> <span class="o">=</span> <span class="n">packet_ref</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_max_pkt_size</span> <span class="o">=</span> <span class="n">max_pkt_size</span>
+
+        <span class="k">def</span> <span class="nf">gen_random_str</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">gen_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_gen_length</span><span class="p">()</span>
+            <span class="c"># return a string of size gen_length bytes, to pad the packet to its max_size</span>
+            <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">SystemRandom</span><span class="p">()</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gen_length</span><span class="p">))</span>
+
+        <span class="k">def</span> <span class="nf">gen_repeat_ptrn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ptrn_to_repeat</span><span class="p">):</span>
+            <span class="n">gen_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_gen_length</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="c"># generate repeated string</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">ptrn_to_repeat</span> <span class="o">*</span> <span class="p">(</span><span class="n">gen_length</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))[:</span><span class="n">gen_length</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">ptrn</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">)[</span><span class="mi">2</span><span class="p">:])</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">ptrn</span> <span class="o">*</span> <span class="p">(</span><span class="n">gen_length</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ptrn</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))[:</span><span class="n">gen_length</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">((</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">255</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">))</span>
+                           <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ptrn_to_repeat</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;All numbers in tuple must be in range 0 &lt;= number &lt;= 255 &quot;</span><span class="p">)</span>
+                <span class="c"># generate repeated sequence</span>
+                <span class="n">to_pack</span> <span class="o">=</span> <span class="p">(</span><span class="n">ptrn_to_repeat</span> <span class="o">*</span> <span class="p">(</span><span class="n">gen_length</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))[:</span><span class="n">gen_length</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;B&#39;</span><span class="o">*</span><span class="n">gen_length</span><span class="p">,</span> <span class="o">*</span><span class="n">to_pack</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Given ptrn_to_repeat argument type ({0}) is illegal.&quot;</span><span class="o">.</span>
+                                 <span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ptrn_to_repeat</span><span class="p">)))</span>
+
+        <span class="k">def</span> <span class="nf">_calc_gen_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_pkt_size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pkt_ref</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM">[docs]</a>    <span class="k">class</span> <span class="nc">CTRexVM</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This class defines the TRex VM which represents how TRex will regenerate packets.</span>
+<span class="sd">        The packets will be regenerated based on the built packet containing this class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">InstStore</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;InstStore&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;inst&#39;</span><span class="p">])</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Instantiate a CTRexVM object</span>
+
+<span class="sd">            :parameters:</span>
+<span class="sd">                None</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_inst_by_offset</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c"># this data structure holds only offset-related instructions, ordered in tuples</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_off_inst_by_name</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.set_vm_var_field"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.set_vm_var_field">[docs]</a>        <span class="k">def</span> <span class="nf">set_vm_var_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var_name</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">offset_inst</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Set VM variable field. Only existing variables are allowed to be changed.</span>
+
+<span class="sd">            :parameters:</span>
+<span class="sd">                var_name : str</span>
+<span class="sd">                    a string representing the name of the VM variable to be changed.</span>
+<span class="sd">                field_name : str</span>
+<span class="sd">                    a string representing the field name of the VM variable to be changed.</span>
+<span class="sd">                val :</span>
+<span class="sd">                    a value to be applied to field_name field of the var_name VM variable.</span>
+
+<span class="sd">            :raises:</span>
+<span class="sd">                + :exc:`KeyError`, in case invalid var_name has been specified.</span>
+<span class="sd">                + :exc:`CTRexPktBuilder.VMVarFieldTypeError`, in case mismatch between `val` and allowed type.</span>
+<span class="sd">                + :exc:`CTRexPktBuilder.VMVarValueError`, in case val isn&#39;t one of allowed options of field_name.</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">offset_inst</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_off_inst_by_name</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">inst</span><span class="o">.</span><span class="n">set_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">set_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</div>
+        <span class="k">def</span> <span class="nf">set_vm_off_inst_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var_name</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_vm_var_field</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.add_flow_man_inst"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.add_flow_man_inst">[docs]</a>        <span class="k">def</span> <span class="nf">add_flow_man_inst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Adds a new flow manipulation object to the VM instance.</span>
+
+<span class="sd">            :parameters:</span>
+<span class="sd">                name : str</span>
+<span class="sd">                    name of the manipulation, must be distinct.</span>
+<span class="sd">                    Example: &#39;source_ip_change&#39;</span>
+
+<span class="sd">                **kwargs** : dict</span>
+<span class="sd">                    optional, set flow_man fields on initialization (key = field_name, val = field_val).</span>
+<span class="sd">                    Must be used with legit fields, see :func:`CTRexPktBuilder.CTRexVM.CTRexVMVariable.set_field`.</span>
+
+<span class="sd">            :return:</span>
+<span class="sd">                None</span>
+
+<span class="sd">            :raises:</span>
+<span class="sd">                + :exc:`CTRexPktBuilder.VMVarNameExistsError`, in case of desired flow_man name already taken.</span>
+<span class="sd">                + Exceptions from :func:`CTRexPktBuilder.CTRexVM.CTRexVMVariable.set_field` method.</span>
+<span class="sd">                  Will rise when VM variables were misconfiguration.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">CTRexVMFlowVariable</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="c"># try configuring VM instruction attributes</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">set_field</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMVarNameExistsError</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</div>
+        <span class="k">def</span> <span class="nf">add_fix_checksum_inst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linked_ipv4_obj</span><span class="p">,</span> <span class="n">offset_to_obj</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+            <span class="c"># check if specified linked_ipv4_obj is indeed an ipv4 object</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">linked_ipv4_obj</span><span class="p">,</span> <span class="n">dpkt</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">IP</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;The provided layer object is not of IPv4.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;checksum_{off}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">off</span><span class="o">=</span><span class="n">offset_to_obj</span><span class="p">)</span>   <span class="c"># name will override previous checksum inst, OK</span>
+            <span class="n">new_checksum_inst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">CTRexVMChecksumInst</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">offset_to_obj</span><span class="p">)</span>
+            <span class="c"># store the checksum inst in the end of the IP header (20 Bytes long)</span>
+            <span class="n">inst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InstStore</span><span class="p">(</span><span class="s">&#39;checksum&#39;</span><span class="p">,</span> <span class="n">new_checksum_inst</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_inst_by_offset</span><span class="p">[</span><span class="n">offset_to_obj</span> <span class="o">+</span> <span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_off_inst_by_name</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
+
+        <span class="k">def</span> <span class="nf">add_write_flow_inst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pkt_offset</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Trying to add write_flow_var instruction to a not-exists VM flow variable (&#39;{0}&#39;)&quot;</span><span class="o">.</span>
+                               <span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_write_inst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">CTRexVMWrtFlowVarInst</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">pkt_offset</span><span class="p">)</span>
+                <span class="c"># try configuring VM instruction attributes</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">new_write_inst</span><span class="o">.</span><span class="n">set_field</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                <span class="c"># add the instruction to the date-structure</span>
+                <span class="n">inst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InstStore</span><span class="p">(</span><span class="s">&#39;write&#39;</span><span class="p">,</span> <span class="n">new_write_inst</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_inst_by_offset</span><span class="p">[</span><span class="n">pkt_offset</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_off_inst_by_name</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.load_flow_man"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.load_flow_man">[docs]</a>        <span class="k">def</span> <span class="nf">load_flow_man</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_obj</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Loads an outer VM variable (instruction) into current VM.</span>
+<span class="sd">            The outer VM variable must contain different name than existing VM variables currently registered on VM.</span>
+
+<span class="sd">            :parameters:</span>
+<span class="sd">                flow_obj : CTRexVMVariable</span>
+<span class="sd">                    a CTRexVMVariable to be loaded into VM variable sets.</span>
+
+<span class="sd">            :return:</span>
+<span class="sd">                list holds variables data of VM</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flow_obj</span><span class="p">,</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMFlowVariable</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">flow_obj</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="p">[</span><span class="n">flow_obj</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">flow_obj</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMVarNameExistsError</span><span class="p">(</span><span class="n">flow_obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.dump"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.dump">[docs]</a>        <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            dumps a VM variables (instructions) into a list data structure.</span>
+
+<span class="sd">            :parameters:</span>
+<span class="sd">                None</span>
+
+<span class="sd">            :return:</span>
+<span class="sd">                list holds variables data of VM</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c"># at first, dump all CTRexVMFlowVariable instructions</span>
+            <span class="n">ret_val</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+                       <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vm_variables</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+            <span class="c"># then, dump all the CTRexVMWrtFlowVarInst and CTRexVMChecksumInst instructions</span>
+            <span class="n">ret_val</span> <span class="o">+=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_inst_by_offset</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">inst</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+                        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inst_by_offset</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="n">ret_val</span>
+</div>
+        <span class="k">class</span> <span class="nc">CVMAbstractInstruction</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+            <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMVariable object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CVMAbstractInstruction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+            <span class="k">def</span> <span class="nf">set_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldNameError</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+
+            <span class="nd">@abstractmethod</span>
+            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">pass</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable">[docs]</a>        <span class="k">class</span> <span class="nc">CTRexVMFlowVariable</span><span class="p">(</span><span class="n">CVMAbstractInstruction</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            This class defines a single VM variable to be used as part of CTRexVar object.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">VALID_SIZE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>   <span class="c"># size in Bytes</span>
+            <span class="n">VALID_OPERATION</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;inc&quot;</span><span class="p">,</span> <span class="s">&quot;dec&quot;</span><span class="p">,</span> <span class="s">&quot;random&quot;</span><span class="p">]</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMVariable object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMFlowVariable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="c"># self.name = name</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">4</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">big_endian</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">operation</span> <span class="o">=</span> <span class="s">&quot;inc&quot;</span>
+                <span class="c"># self.split_by_core = False</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">init_value</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_value</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_value</span>
+
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable.set_field"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable.set_field">[docs]</a>            <span class="k">def</span> <span class="nf">set_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Set VM variable field. Only existing variables are allowed to be changed.</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    field_name : str</span>
+<span class="sd">                        a string representing the field name of the VM variable to be changed.</span>
+<span class="sd">                    val :</span>
+<span class="sd">                        a value to be applied to field_name field of the var_name VM variable.</span>
+
+<span class="sd">                :return:</span>
+<span class="sd">                    None</span>
+
+<span class="sd">                :raises:</span>
+<span class="sd">                    + :exc:`CTRexPktBuilder.VMVarNameError`, in case of illegal field name.</span>
+<span class="sd">                    + :exc:`CTRexPktBuilder.VMVarFieldTypeError`, in case mismatch between `val` and allowed type.</span>
+<span class="sd">                    + :exc:`CTRexPktBuilder.VMVarValueError`, in case val isn&#39;t one of allowed options of field_name.</span>
+
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldNameError</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">field_name</span> <span class="o">==</span> <span class="s">&quot;size&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">(</span><span class="s">&quot;size&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VALID_SIZE</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldValueError</span><span class="p">(</span><span class="s">&quot;size&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">VALID_SIZE</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;init_value&quot;</span><span class="p">,</span> <span class="s">&quot;min_value&quot;</span><span class="p">,</span> <span class="s">&quot;max_value&quot;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">field_name</span> <span class="o">==</span> <span class="s">&quot;operation&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">(</span><span class="s">&quot;operation&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VALID_OPERATION</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldValueError</span><span class="p">(</span><span class="s">&quot;operation&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">VALID_OPERATION</span><span class="p">)</span>
+                <span class="c"># elif field_name == &quot;split_by_core&quot;:</span>
+                <span class="c">#     val = bool(val)</span>
+                <span class="c"># update field value on success</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable.dump"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CTRexVM.CTRexVMFlowVariable.dump">[docs]</a>            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                dumps a variable fields in a dictionary data structure.</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    None</span>
+
+<span class="sd">                :return:</span>
+<span class="sd">                    dictionary holds variable data of VM variable</span>
+
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;flow_var&quot;</span><span class="p">,</span>  <span class="c"># VM variable dump always refers to manipulate instruction.</span>
+                        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+                        <span class="s">&quot;op&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span>
+                        <span class="c"># &quot;split_by_core&quot;: self.split_by_core,</span>
+                        <span class="s">&quot;init_value&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">init_value</span><span class="p">),</span>
+                        <span class="s">&quot;min_value&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_value</span><span class="p">),</span>
+                        <span class="s">&quot;max_value&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_value</span><span class="p">)}</span>
+</div></div>
+        <span class="k">class</span> <span class="nc">CTRexVMChecksumInst</span><span class="p">(</span><span class="n">CVMAbstractInstruction</span><span class="p">):</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMChecksumInst object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMChecksumInst</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span> <span class="o">=</span> <span class="n">offset</span>
+
+            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;fix_checksum_ipv4&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;pkt_offset&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span><span class="p">)}</span>
+
+        <span class="k">class</span> <span class="nc">CTRexVMWrtFlowVarInst</span><span class="p">(</span><span class="n">CVMAbstractInstruction</span><span class="p">):</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pkt_offset</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMWrtFlowVarInst object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMWrtFlowVarInst</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pkt_offset</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_value</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_big_endian</span> <span class="o">=</span> <span class="bp">False</span>
+
+            <span class="k">def</span> <span class="nf">set_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldNameError</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">field_name</span> <span class="o">==</span> <span class="s">&#39;pkt_offset&#39;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;pkt_offset value cannot be changed&quot;</span><span class="p">)</span>
+                <span class="n">cur_attr_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">cur_attr_type</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">cur_attr_type</span><span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;write_flow_var&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="s">&quot;pkt_offset&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span><span class="p">,</span>
+                        <span class="s">&quot;add_value&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add_value</span><span class="p">),</span>
+                        <span class="s">&quot;is_big_endian&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_big_endian</span><span class="p">)</span>
+                        <span class="p">}</span>
+
+        <span class="k">class</span> <span class="nc">CTRexVMChecksumInst</span><span class="p">(</span><span class="n">CVMAbstractInstruction</span><span class="p">):</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMChecksumInst object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMChecksumInst</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span> <span class="o">=</span> <span class="n">offset</span>
+
+            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;fix_checksum_ipv4&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;pkt_offset&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span><span class="p">)}</span>
+
+        <span class="k">class</span> <span class="nc">CTRexVMWrtFlowVarInst</span><span class="p">(</span><span class="n">CVMAbstractInstruction</span><span class="p">):</span>
+
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pkt_offset</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Instantiate a CTRexVMWrtFlowVarInst object</span>
+
+<span class="sd">                :parameters:</span>
+<span class="sd">                    name : str</span>
+<span class="sd">                        a string representing the name of the VM variable.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">CTRexVM</span><span class="o">.</span><span class="n">CTRexVMWrtFlowVarInst</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pkt_offset</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_value</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_big_endian</span> <span class="o">=</span> <span class="bp">False</span>
+
+            <span class="k">def</span> <span class="nf">set_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldNameError</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">field_name</span> <span class="o">==</span> <span class="s">&#39;pkt_offset&#39;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;pkt_offset value cannot be changed&quot;</span><span class="p">)</span>
+                <span class="n">cur_attr_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">cur_attr_type</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">cur_attr_type</span><span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;write_flow_var&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="s">&quot;pkt_offset&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pkt_offset</span><span class="p">,</span>
+                        <span class="s">&quot;add_value&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add_value</span><span class="p">),</span>
+                        <span class="s">&quot;is_big_endian&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_big_endian</span><span class="p">)</span>
+                        <span class="p">}</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.CPacketBuildException"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.CPacketBuildException">[docs]</a>    <span class="k">class</span> <span class="nc">CPacketBuildException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This is the general Packet Building error exception class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+
+        <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__repr__</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s">u&quot;[errcode:</span><span class="si">%r</span><span class="s">] </span><span class="si">%r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.EmptyPacketError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.EmptyPacketError">[docs]</a>    <span class="k">class</span> <span class="nc">EmptyPacketError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error caused by operation performed on an empty packet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;Illegal operation on empty packet.&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">EmptyPacketError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.IPAddressError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.IPAddressError">[docs]</a>    <span class="k">class</span> <span class="nc">IPAddressError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error on the IP addressing part of the packet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;Illegal type or value of IP address has been provided.&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">IPAddressError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.MACAddressError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.MACAddressError">[docs]</a>    <span class="k">class</span> <span class="nc">MACAddressError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error on the MAC addressing part of the packet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;Illegal MAC address has been provided.&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">MACAddressError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.PacketLayerError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.PacketLayerError">[docs]</a>    <span class="k">class</span> <span class="nc">PacketLayerError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error caused by operation performed on an non-exists layer of the packet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&quot;The given packet layer name ({0}) does not exists.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.PacketLayerTypeError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.PacketLayerTypeError">[docs]</a>    <span class="k">class</span> <span class="nc">PacketLayerTypeError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error caused by operation performed on an non-exists layer of the packet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">layer_type</span><span class="p">,</span> <span class="n">ok_type</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&quot;The type of packet layer {layer_name} is of type {layer_type}, &quot;</span> \
+                                    <span class="s">&quot;and not of the expected {allowed_type}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                                                                                     <span class="n">layer_type</span><span class="o">=</span><span class="n">layer_type</span><span class="p">,</span>
+                                                                                     <span class="n">allowed_type</span><span class="o">=</span><span class="n">ok_type</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">PacketLayerTypeError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.VMVarNameExistsError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.VMVarNameExistsError">[docs]</a>    <span class="k">class</span> <span class="nc">VMVarNameExistsError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate a duplicate usage of VM variable.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;The given VM name ({0}) already exists as part of the stream.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMVarNameExistsError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.VMFieldNameError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.VMFieldNameError">[docs]</a>    <span class="k">class</span> <span class="nc">VMFieldNameError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate that an undefined VM var field name has been accessed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&quot;The given VM field name ({0}) is not defined and isn&#39;t legal.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldNameError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.VMFieldTypeError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.VMFieldTypeError">[docs]</a>    <span class="k">class</span> <span class="nc">VMFieldTypeError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an illegal value has type has been given to VM variable field.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ok_type</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&quot;The desired value of field {field_name} is of type {field_type}, &quot;</span> \
+                                    <span class="s">&quot;and not of the allowed {allowed_type}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                                                                                    <span class="n">field_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+                                                                                    <span class="n">allowed_type</span><span class="o">=</span><span class="n">ok_type</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldTypeError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">31</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CTRexPktBuilder.VMFieldValueError"><a class="viewcode-back" href="../packet_generator/packet_builder_code.html#packet_builder.CTRexPktBuilder.VMFieldValueError">[docs]</a>    <span class="k">class</span> <span class="nc">VMFieldValueError</span><span class="p">(</span><span class="n">CPacketBuildException</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This exception is used to indicate an error an illegal value has been assigned to VM variable field.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ok_opts</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span> <span class="o">=</span> <span class="s">&quot;The desired value of field {field_name} is illegal.</span><span class="se">\n</span><span class="s">&quot;</span> \
+                                    <span class="s">&quot;The only allowed options are: {allowed_opts}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                                                                                           <span class="n">allowed_opts</span><span class="o">=</span><span class="n">ok_opts</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CTRexPktBuilder</span><span class="o">.</span><span class="n">VMFieldValueError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">-</span><span class="mi">32</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Cisco Systems Inc..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

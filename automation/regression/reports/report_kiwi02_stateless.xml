@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="1" errors="0" failures="0" skip="0"><testcase classname="stateless_tests.stl_general_test.STLBasic_Test" name="test_connectivity" time="24.582"><system-out><![CDATA[
+Configuring DUT... done. (22s)
+Starting TRex... done. (0s)
+Connecting.
+Connected
+Mapping ports.
+Got ports mapping: {'map': {0: 1, 1: 0, 2: 3, 3: 2}, 'bi': [(0, 1), (2, 3)], 'unknown': []}
+]]></system-out></testcase></testsuite>

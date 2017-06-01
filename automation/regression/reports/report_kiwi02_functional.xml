@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="1" errors="0" failures="0" skip="0"><testcase classname="stl_basic_tests.CStlBasic_Test" name="test_stl_profiles" time="5.641"><system-out><![CDATA[Testing profile: udp_1pkt_1mac_override.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpqzy7h2 -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmp0Odmpe -o a.pcap'
+Testing profile: syn_attack.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpDOgexu -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpEgjSEm -o a.pcap'
+Testing profile: udp_1pkt_1mac.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpWmLT1a -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpTsCMgR -o a.pcap'
+Testing profile: udp_1pkt_mac.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpGcwzEs -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpZis5_F -o a.pcap'
+Testing profile: udp_1pkt.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpZFac7Q -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpZoltau -o a.pcap'
+Testing profile: udp_1pkt_tuple_gen.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpvOLwa5 -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpPrUQkd -o a.pcap'
+Testing profile: udp_rand_len_9k.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmp3vIN3L -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpfBnz_Y -o a.pcap'
+Testing profile: udp_1pkt_mpls.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpuI1e_v -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmp_ZzA5I -o a.pcap'
+Testing profile: udp_1pkt_mpls_vm.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmplfTQw1 -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmpJZQ7El -o a.pcap'
+Testing profile: imix.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmp3OFA3K -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmp0hDWsA -o a.pcap'
+Testing profile: udp_inc_len_9k.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpTKBZaR -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpmtRaSD -o a.pcap'
+Testing profile: udp_1pkt_range_clients.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmp682qwF -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpujIwPo -o a.pcap'
+Testing profile: multi_burst_2st_1000pkt.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmp4O_F4e -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpDiT7Pf -o a.pcap'
+Testing profile: pcap.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmpJTl7hU -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmpCw6Ln1 -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/pcap.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m  dst       = e0:5f:b9:69:e9:22?[22m
+?[1m  src       = 00:15:17:a7:75:a3?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m  dst       = 10:10:10:10:10:10?[22m
+?[1m  src       = 18:18:18:18:18:18?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/pcap.pcap' in cap #1
+Testing profile: pcap_with_vm.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmpoS00Pc -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 5000 -f /tmp/tmpKjvxQ7 -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/pcap_with_vm.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m  dst       = e0:5f:b9:69:e9:22?[22m
+?[1m  src       = 00:15:17:a7:75:a3?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m  dst       = 10:10:10:10:10:10?[22m
+?[1m  src       = 18:18:18:18:18:18?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/pcap_with_vm.pcap' in cap #1
+Testing profile: yaml/burst_1000_pkt.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpGs7HNQ -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpSInfYb -o a.pcap'
+Testing profile: yaml/burst_1pkt_1burst.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpCBXzcp -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpnw9Anq -o a.pcap'
+Testing profile: yaml/burst_1pkt_vm.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpu4f_ak -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmppOPhe2 -o a.pcap'
+Testing profile: yaml/imix_1pkt.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpSFo96J -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpVio29T -o a.pcap'
+Testing profile: yaml/imix_1pkt_2.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpnGOsSA -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpQnKMCe -o a.pcap'
+Testing profile: yaml/imix_1pkt_tuple_gen.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpTU22pE -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmph6gfnc -o a.pcap'
+Testing profile: yaml/imix_1pkt_vm.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpo20xOR -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 100 -f /tmp/tmpjap1FQ -o a.pcap'
+Testing profile: udp_1pkt_pcap.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmp3jNp3F -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpAKFf6a -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_pcap.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m  dst       = 00:50:56:80:0d:28?[22m
+?[1m  src       = 00:de:01:0a:01:00?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m  dst       = 10:10:10:10:10:10?[22m
+?[1m  src       = 18:18:18:18:18:18?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_pcap.pcap' in cap #1
+Testing profile: udp_3pkt_pcap.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpbdobAv -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpNSsuCb -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_3pkt_pcap.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m  dst       = 00:50:56:80:0d:28?[22m
+?[1m  src       = 00:de:01:0a:01:00?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m  dst       = 10:10:10:10:10:10?[22m
+?[1m  src       = 18:18:18:18:18:18?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_3pkt_pcap.pcap' in cap #1
+Testing profile: udp_1pkt_pcap_relative_path.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 3 -f /tmp/tmpe4RhDY -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 3 -f /tmp/tmp1Aixx6 -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_pcap_relative_path.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m  dst       = 00:50:56:80:0d:28?[22m
+?[1m  src       = 00:de:01:0a:01:00?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m  dst       = 10:10:10:10:10:10?[22m
+?[1m  src       = 18:18:18:18:18:18?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_pcap_relative_path.pcap' in cap #1
+Testing profile: udp_1pkt_tuple_gen_split.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 100 -f /tmp/tmpP_Tf3x -o a.pcap'
+Mering cores output to a single pcap file...
+
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 100 -f /tmp/tmpi6P7P0 -o a.pcap'
+Mering cores output to a single pcap file...
+
+Testing profile: udp_1pkt_range_clients_split.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 100 -f /tmp/tmpu3J1Kp -o a.pcap'
+Mering cores output to a single pcap file...
+
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 100 -f /tmp/tmp03SHoW -o a.pcap'
+Mering cores output to a single pcap file...
+
+Testing profile: udp_1pkt_vxlan.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 17 -f /tmp/tmpgtRQUQ -o a.pcap'
+Testing profile: udp_1pkt_ipv6_in_ipv4.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 17 -f /tmp/tmph0XcZQ -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 17 -f /tmp/tmpFcNGuB -o a.pcap'
+Testing profile: yaml/imix_3pkt.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 20 -f /tmp/tmpbhmsFi -o a.pcap'
+Mering cores output to a single pcap file...
+
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 20 -f /tmp/tmpz5yQhW -o a.pcap'
+Mering cores output to a single pcap file...
+
+Testing profile: yaml/imix_3pkt_vm.yaml
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 20 -f /tmp/tmpuIItVy -o a.pcap'
+Mering cores output to a single pcap file...
+
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 20 -f /tmp/tmpSRmeiD -o a.pcap'
+Mering cores output to a single pcap file...
+
+Testing profile: udp_1pkt_simple_mac_dst.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmpzUESqB -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmpKxT427 -o a.pcap'
+Testing profile: udp_1pkt_simple_mac_src.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmp_p8KrH -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmpIXgu0P -o a.pcap'
+Testing profile: udp_1pkt_simple_mac_dst_src.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmpThUr0A -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 1 -f /tmp/tmpfraJGd -o a.pcap'
+Testing profile: burst_3st_loop_x_times.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpwDrxBu -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmp2e1UOR -o a.pcap'
+Testing profile: udp_1pkt_mac_step.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpPv6YGg -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpQZTUHj -o a.pcap'
+Testing profile: udp_1pkt_mac_mask1.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpatkQc7 -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpyQs_6T -o a.pcap'
+Testing profile: udp_1pkt_mac_mask2.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpHQrqNW -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpjEeDgn -o a.pcap'
+Testing profile: udp_1pkt_mac_mask3.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpAE_LEL -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 20 -f /tmp/tmpm374iD -o a.pcap'
+Testing profile: udp_1pkt_simple_test2.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpPIWVxb -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpNL7Weh -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_simple_test2.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m              chksum    = 0xa6f4?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m              chksum    = 0xa6f8?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_simple_test2.pcap' in cap #1
+Testing profile: udp_1pkt_simple_test.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmp4qCuff -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 10 -f /tmp/tmpebg41G -o a.pcap'
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_simple_test.pcap' in cap #1
+?[4m
+different fields for packet #1:?[24m
+?[4m?[1m
+Got:
+?[22m?[24m
+?[1m        chksum    = 0xe76d?[22m
+?[4m?[1m
+Expected:
+?[22m?[24m
+?[1m        chksum    = 0xe771?[22m
+
+
+RAW error: output file 'a.pcap', differs from golden 'exp/udp_1pkt_simple_test.pcap' in cap #1
+Testing profile: udp_1pkt_mac_mask5.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 30 -f /tmp/tmpVWfYPa -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 30 -f /tmp/tmpXlUFFx -o a.pcap'
+Testing profile: udp_1pkt_range_clients_split_garp.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpKn_xBX -o a.pcap'
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 1 --limit 50 -f /tmp/tmpwSPGAJ -o a.pcap'
+Testing profile: udp_1pkt_src_ip_split.py
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 50 -f /tmp/tmpk4U4Gw -o a.pcap'
+Mering cores output to a single pcap file...
+
+executing command: '/auto/srg-sce-swinfra-usr/emb/users/hhaim/work/depot/asr1k/emb/private/hhaim/bp_sim_git/trex-core/scripts/bp-sim-64-debug --pcap --sl --cores 2 --limit 50 -f /tmp/tmpsrCkrw -o a.pcap'
+Mering cores output to a single pcap file...
+
+]]></system-out></testcase></testsuite>

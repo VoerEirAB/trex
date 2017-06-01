@@ -1,0 +1,7 @@
+Version : v2.14
+DPDK version: DPDK 16.07.0
+User    : hhaim
+Date    : Jan 23 2017 , 02:17:21
+Uuid    : 399a4116-e101-11e6-a6a4-641225363740
+Git SHA : 193013a82048fe62319208e26fbaa4fb101a431c
+Server: 10.56.192.215, Modes: ['loopback', 'virt_nics', 'VM']

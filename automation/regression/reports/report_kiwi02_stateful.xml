@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="1" errors="0" failures="0" skip="0"><testcase classname="stateful_tests.trex_imix_test.CTRexIMIX_Test" name="test_routing_imix_64" time="57.521"><system-out><![CDATA[
+
+LATEST RESULT OBJECT:
+Is valid history?       True
+Done warmup?            True
+Expected tx rate:       {u'm_tx_expected_pps': 16000000.0, u'm_tx_expected_bps': 8192000000.0, u'm_tx_expected_cps': 16000000.0}
+Current tx rate:        {u'm_tx_bps': 8212560384.0, u'm_tx_cps': 0.0, u'm_tx_pps': 16040031.0}
+Minimum latency:        {u'min-2': 10, u'min-3': 10, u'min-0': 10, u'min-1': 10}
+Maximum latency:        {u'max-0': 35, u'max-1': 25, u'max-2': 25, u'max-3': 25}
+Average latency:        {'all': 23.25, u'port2': 23.0, u'port3': 22.0, u'port0': 25.0, u'port1': 23.0}
+Average window latency: {'all': 22.914, u'port2': 22.816, u'port3': 21.897, u'port0': 24.431, u'port1': 22.512}
+Total drops:            392
+Drop rate:              0.0
+History size so far:    32
+
+router drop stats: {u'TenGigabitEthernet0/2/0': 2, 'total_drops': 2}
+TRex drop stats: 392
+TRex CPU utilization: 55.59%, norm_cpu is : 3.68 Gb/core
+Err percent: 50.4894567884
+]]></system-out></testcase></testsuite>

@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trex_exceptions &mdash; TRex Control Plain 1.7.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/no_scrollbars.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TRex Control Plain 1.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> TRex Control Plain
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/client_code.html">trex_client Module documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/client_code.html#ctrexclient-class">CTRexClient class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/client_code.html#ctrexresult-class">CTRexResult class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/exceptions.html">trex_exceptions Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/json_fields.html">TRex JSON Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#main-fields">Main Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#detailed-explanation">Detailed explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-global-field">trex-global field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#tx-gen-field">tx-gen field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-latecny-field">trex-latecny field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#trex-latecny-v2-field">trex-latecny-v2 field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/json_fields.html#histogram-object-fields">Histogram object fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/json_fields.html#access-examples">Access Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_utils.html">Client Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packet_generator/index.html">TRex Packet Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html">CTRexPktBuilder class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/packet_builder_code.html#packet-builder-exceptions">Packet Builder Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/examples.html">Packet Builder Usage Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packet_generator/stream_export.html">Stream Export YAML syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#guidelines">Guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#export-format">Export Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../packet_generator/stream_export.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-trex_yaml_gen">TRex YAML generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client_utils.html#module-general_utils">General Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#full-featured-interactive-shell">Full-featured interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage_examples.html#end-to-end-cycle">End-to-End cycle</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">TRex Control Plain</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      
+    <li>trex_exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for trex_exceptions</h1><div class="highlight"><pre>
+<span class="c">#!/router/bin/python</span>
+
+<span class="c">#from rpc_exceptions import RPCExceptionHandler, WrappedRPCError</span>
+
+<span class="kn">from</span> <span class="nn">jsonrpclib</span> <span class="kn">import</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">ProtocolError</span><span class="p">,</span> <span class="n">AppError</span>
+
+<div class="viewcode-block" id="RPCError"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.RPCError">[docs]</a><span class="k">class</span> <span class="nc">RPCError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is the general RPC error exception class from which :exc:`trex_exceptions.TRexException` inherits. </span>
+
+<span class="sd">    Every exception in this class has as error format according to JSON-RPC convention convention: code, message and data.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">remote_data</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">code</span>   <span class="o">=</span> <span class="n">code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span>    <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_message</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span>   <span class="o">=</span> <span class="n">remote_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span>   <span class="o">=</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">,</span> <span class="n">remote_data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__repr__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">u&quot;[errcode:</span><span class="si">%r</span><span class="s">] </span><span class="si">%r</span><span class="s">. Extended data: </span><span class="si">%r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">u&quot;[errcode:</span><span class="si">%r</span><span class="s">] </span><span class="si">%r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="TRexException"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexException">[docs]</a><span class="k">class</span> <span class="nc">TRexException</span><span class="p">(</span><span class="n">RPCError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    This is the most general TRex exception.</span>
+<span class="sd">    </span>
+<span class="sd">    All exceptions inherits from this class has an error code and a default message which describes the most common use case of the error.</span>
+
+<span class="sd">    This exception isn&#39;t used by default and will only when an unrelated to ProtocolError will occur, and it can&#39;t be resolved to any of the deriviate exceptions.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex encountered an unexpected error. please contact TRex dev team.&#39;</span>
+    <span class="c"># api_name = &#39;TRex&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexError"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexError">[docs]</a><span class="k">class</span> <span class="nc">TRexError</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    This is the most general TRex exception.</span>
+
+<span class="sd">    This exception isn&#39;t used by default and will only when an unrelated to ProtocolError will occur, and it can&#39;t be resolved to any of the deriviate exceptions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex run failed due to wrong input parameters, or due to reachability issues.&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexWarning"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexWarning">[docs]</a><span class="k">class</span> <span class="nc">TRexWarning</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Indicates a warning from TRex server. When this exception raises it normally used to indicate required data isn&#39;t ready yet &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">12</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex is starting (data is not available yet).&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexRequestDenied"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexRequestDenied">[docs]</a><span class="k">class</span> <span class="nc">TRexRequestDenied</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Indicates the desired reques was denied by the server &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">33</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex desired request denied because the requested resource is already taken. Try again once TRex is back in IDLE state.&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexInUseError"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexInUseError">[docs]</a><span class="k">class</span> <span class="nc">TRexInUseError</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Indicates that TRex is currently in use</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">13</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex is already being used by another user or process. Try again once TRex is back in IDLE state.&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexRunFailedError"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexRunFailedError">[docs]</a><span class="k">class</span> <span class="nc">TRexRunFailedError</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Indicates that TRex has failed due to some reason. This Exception is used when TRex process itself terminates due to unknown reason &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">14</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+</div>
+<div class="viewcode-block" id="TRexIncompleteRunError"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.TRexIncompleteRunError">[docs]</a><span class="k">class</span> <span class="nc">TRexIncompleteRunError</span><span class="p">(</span><span class="n">TRexException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Indicates that TRex has failed due to some reason.</span>
+<span class="sd">    This Exception is used when TRex process itself terminated with error fault or it has been terminated by an external intervention in the OS.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span>
+    <span class="n">_default_message</span> <span class="o">=</span> <span class="s">&#39;TRex run was terminated unexpectedly by outer process or by the hosting OS&#39;</span>
+</div>
+<span class="n">EXCEPTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="n">TRexException</span><span class="p">,</span> <span class="n">TRexError</span><span class="p">,</span> <span class="n">TRexWarning</span><span class="p">,</span> <span class="n">TRexInUseError</span><span class="p">,</span> <span class="n">TRexRequestDenied</span><span class="p">,</span> <span class="n">TRexRunFailedError</span><span class="p">,</span> <span class="n">TRexIncompleteRunError</span><span class="p">]</span>
+
+<div class="viewcode-block" id="CExceptionHandler"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.CExceptionHandler">[docs]</a><span class="k">class</span> <span class="nc">CExceptionHandler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    CExceptionHandler is responsible for generating TRex API related exceptions in client side.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exceptions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Instatiate a CExceptionHandler object</span>
+
+<span class="sd">        :parameters:</span>
+
+<span class="sd">         exceptions : list</span>
+<span class="sd">            a list of all TRex acceptable exception objects.</span>
+<span class="sd">            </span>
+<span class="sd">            default list:</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexException`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexError`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexWarning`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexInUseError`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexRequestDenied`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexRunFailedError`</span>
+<span class="sd">               - :exc:`trex_exceptions.TRexIncompleteRunError`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exceptions</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+            <span class="n">exceptions</span> <span class="o">=</span> <span class="p">[</span> <span class="n">exceptions</span><span class="p">,</span> <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span> <span class="o">=</span> <span class="n">exceptions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exceptions_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CExceptionHandler.gen_exception"><a class="viewcode-back" href="../api/exceptions.html#trex_exceptions.CExceptionHandler.gen_exception">[docs]</a>    <span class="k">def</span> <span class="nf">gen_exception</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates an exception based on a general ProtocolError exception object `err`. </span>
+
+<span class="sd">        When TRex is reserved, no other user can start new TRex runs.</span>
+
+<span class="sd">                </span>
+<span class="sd">        :parameters:</span>
+<span class="sd">        </span>
+<span class="sd">         err : exception</span>
+<span class="sd">            a ProtocolError exception raised by :class:`trex_client.CTRexClient` class</span>
+
+<span class="sd">        :return: </span>
+<span class="sd">         A TRex exception from the exception list defined in class creation.</span>
+
+<span class="sd">         If such exception wasn&#39;t found, returns a TRexException exception</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">code</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">err</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">exp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions_dict</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="c"># revert to TRexException when unknown error application raised</span>
+             <span class="k">return</span> <span class="n">TRexException</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+</div></div>
+<span class="n">exception_handler</span> <span class="o">=</span> <span class="n">CExceptionHandler</span><span class="p">(</span> <span class="n">EXCEPTIONS</span> <span class="p">)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Cisco Systems Inc..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
